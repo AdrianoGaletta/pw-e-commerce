@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Unspread — El ERP diseñado para negocios con stock. Compras, Ventas, Inventario y Finanzas en un solo lugar." />
+  <title>Unspread — El ERP para negocios con stock</title>
+</head>
+
+<body>
+
+  <!-- ============================================================
+    NAVBAR — Barra de navegación
+    Estrategia: El CTA "Agendar demo" debe estar siempre visible.
+    En B2B, el visitante decide cuándo está listo — hay que estar
+    ahí en ese momento.
+    Cuando llegue CSS: position fixed, backdrop-filter blur.
+  ============================================================ -->
+  <header>
+    <nav>
+
+      <a href="#inicio">Unspread</a>
+
+      <ul>
+        <li><a href="#producto">Producto</a></li>
+        <li><a href="#diferencial">Por qué Unspread</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#equipo">Nosotros</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <a href="#demo">Agendar demo →</a>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- ==========================================================
+      SECCIÓN 1 — HERO
+      Estrategia: El visitante decide si sigue leyendo en los
+      primeros 5 segundos. El headline usa la debilidad del
+      competidor como argumento propio — los ERPs generalizan,
+      por eso no sirven para negocios específicos con stock.
+      Estructura: texto a la izquierda + mockup del producto a la
+      derecha (layout grid cuando llegue CSS).
+    =========================================================== -->
+    <section id="inicio">
+
+      <!-- Lado izquierdo: propuesta de valor -->
+      <div>
+
+        <!-- Etiqueta de nicho: comunica de entrada a quién va dirigido -->
+        <span>ERP para negocios con stock</span>
+
+        <!-- Headline principal -->
+        <h1>
+          Los ERPs de hoy sirven para todos.
+          <em>Por eso no sirven para vos.</em>
+        </h1>
+
+        <!-- Subheadline: solución concreta en una oración -->
+        <p>
+          Unspread unifica tus compras, ventas, inventario y finanzas en un
+          solo sistema. Diseñado para distribuidoras e importadores que
+          necesitan control real, sin complejidad innecesaria.
+        </p>
+
+        <!-- CTAs principales -->
+        <div>
+          <a href="#demo">Agendar demo gratuita →</a>
+          <a href="#producto">Ver cómo funciona</a>
+        </div>
+
+        <!-- Micro-copy de confianza: reduce la fricción del CTA principal -->
+        <ul>
+          <li>Sin tarjeta de crédito</li>
+          <li>Demo personalizada</li>
+          <li>Respuesta en 24hs</li>
+        </ul>
+
+      </div>
+
+      <!-- Lado derecho: mockup del dashboard del producto -->
+      <!--
+        Cuando llegue CSS esto se convierte en un card oscuro con
+        sombra que simula el panel de control de la app.
+        Cuando llegue JS se puede animar con números que cuentan.
+      -->
+      <figure>
+        <figcaption>Vista del panel de control de Unspread</figcaption>
+
+        <!-- Barra de título del mockup -->
+        <div>
+          <span>Unspread — Panel de control</span>
+        </div>
+
+        <!-- Métricas rápidas del negocio -->
+        <div>
+          <div>
+            <span>Stock total</span>
+            <strong>2.847 unidades</strong>
+            <small>↑ 12% vs mes anterior</small>
+          </div>
+          <div>
+            <span>Órdenes pendientes</span>
+            <strong>14</strong>
+            <small>3 por vencer hoy</small>
+          </div>
+          <div>
+            <span>Facturado este mes</span>
+            <strong>$4.200.000</strong>
+            <small>↑ 8% vs meta</small>
+          </div>
+        </div>
+
+        <!-- Tabla de inventario simplificada -->
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Costo unit.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Importado XR-200</td>
+              <td>342 un.</td>
+              <td>Normal</td>
+              <td>$8.400</td>
+            </tr>
+            <tr>
+              <td>Distribución A-40</td>
+              <td>18 un.</td>
+              <td>Stock bajo</td>
+              <td>$3.200</td>
+            </tr>
+            <tr>
+              <td>Temporada T3</td>
+              <td>0 un.</td>
+              <td>Sin stock</td>
+              <td>$12.700</td>
+            </tr>
+            <tr>
+              <td>Línea Premium P-1</td>
+              <td>127 un.</td>
+              <td>Normal</td>
+              <td>$21.500</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </figure>
+
+    </section>
+
+
+    <!-- ==========================================================
+      SECCIÓN 2 — MÉTRICAS DE CONTEXTO
+      Estrategia: Sin clientes propios todavía, usamos datos del
+      mercado que validan el problema que resolvemos. Generan
+      contexto y hacen que el visitante se identifique.
+      Cuando haya clientes reales: reemplazar con sus resultados.
+    =========================================================== -->
+    <section id="estadisticas">
+
+      <div>
+        <strong>73%</strong>
+        <p>de las PyMEs con stock gestionan su inventario en planillas de Excel desactualizadas</p>
+      </div>
+
+      <div>
+        <strong>4.2 horas</strong>
+        <p>promedio semanal perdido en tareas manuales de reconciliación entre sistemas</p>
+      </div>
+
+      <div>
+        <strong>1 solo sistema</strong>
+        <p>para reemplazar tu inventario, tus compras y tu facturación — sin doble carga de datos</p>
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+      SECCIÓN 3 — PAIN POINTS
+      Estrategia: Describir el dolor con precisión genera
+      reconocimiento inmediato ("esto es exactamente lo que me
+      pasa"). Si entendemos el problema, es creíble que tenemos
+      la solución. Orientado al ICP: dueños/gerentes de
+      distribuidoras e importadoras.
+    =========================================================== -->
+    <section id="problemas">
+
+      <header>
+        <span>¿Te suena familiar?</span>
+        <h2>Los problemas que frenan tu operación todos los días</h2>
+        <p>
+          Si manejás stock, ya los conocés. Los ERPs genéricos los ignoran.
+          Nosotros los resolvemos.
+        </p>
+      </header>
+
+      <div>
+
+        <article>
+          <h3>El Excel que nadie entiende</h3>
+          <p>
+            Tu stock vive en una planilla que solo actualiza una persona.
+            Si falta ese día, nadie sabe qué hay disponible ni qué se puede vender.
+          </p>
+        </article>
+
+        <article>
+          <h3>Sistemas que no hablan entre sí</h3>
+          <p>
+            La facturación dice una cosa, el inventario dice otra.
+            Reconciliar eso te consume horas cada semana y siempre
+            aparecen errores cuando ya es tarde.
+          </p>
+        </article>
+
+        <article>
+          <h3>Compras sin visibilidad real</h3>
+          <p>
+            No sabés exactamente cuánto le compraste a cada proveedor
+            ni cuánto te deben. Los reportes son siempre a destiempo
+            o incompletos.
+          </p>
+        </article>
+
+        <article>
+          <h3>El cierre de mes que dura una semana</h3>
+          <p>
+            Reconciliar compras, ventas e inventario manualmente lleva días.
+            No queda tiempo para analizar — solo para sobrevivir el proceso.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+      SECCIÓN 4 — MÓDULOS DEL PRODUCTO
+      Arquitectura real del ERP:
+        - Compras
+            ├── Proveedores
+            └── Contactos
+        - Ventas
+            ├── Clientes
+            └── Contactos
+        - Inventario
+        - Finanzas
+
+      Estrategia: Cada módulo comunica el beneficio concreto para
+      el negocio, no la feature técnica.
+    =========================================================== -->
+    <section id="producto">
+
+      <header>
+        <span>El producto</span>
+        <h2>Todo lo que tu negocio necesita, en un solo lugar</h2>
+        <p>
+          Cuatro módulos integrados que cubren el ciclo completo de un
+          negocio con stock — desde la orden de compra hasta el cobro.
+        </p>
+      </header>
+
+      <div>
+
+        <!-- MÓDULO 1: COMPRAS -->
+        <article>
+          <header>
+            <h3>Compras</h3>
+            <!-- El beneficio va primero, antes de la descripción técnica -->
+            <p>Sabés exactamente cuánto gastás y a quién le debés, siempre.</p>
+          </header>
+
+          <p>
+            Gestioná todo el ciclo de compras desde un solo lugar. Creá órdenes
+            de compra, registrá recepciones de mercadería y llevá el historial
+            completo de cada operación.
+          </p>
+
+          <!-- Submódulos de Compras -->
+          <section aria-label="Submódulos de Compras">
+            <h4>Incluye</h4>
+            <div>
+
+              <div>
+                <h5>Proveedores</h5>
+                <p>
+                  Alta y seguimiento de proveedores, historial de compras por
+                  proveedor, saldo de deuda y condiciones de pago acordadas.
+                </p>
+              </div>
+
+              <div>
+                <h5>Contactos</h5>
+                <p>
+                  Directorio de contactos por proveedor. Personas de referencia,
+                  área de atención y datos de comunicación centralizados.
+                </p>
+              </div>
+
+            </div>
+          </section>
+        </article>
+
+        <!-- MÓDULO 2: VENTAS -->
+        <article>
+          <header>
+            <h3>Ventas</h3>
+            <p>Del pedido a la factura en segundos, conectado con tu stock en tiempo real.</p>
+          </header>
+
+          <p>
+            Procesá pedidos, emitís facturas y controlás la cobranza desde el
+            mismo sistema que gestiona tu inventario. Sin doble carga de datos,
+            sin errores por stock desactualizado.
+          </p>
+
+          <!-- Submódulos de Ventas -->
+          <section aria-label="Submódulos de Ventas">
+            <h4>Incluye</h4>
+            <div>
+
+              <div>
+                <h5>Clientes</h5>
+                <p>
+                  Alta y seguimiento de clientes, historial de ventas, límite
+                  de crédito y condiciones de pago. Todo en un solo lugar.
+                </p>
+              </div>
+
+              <div>
+                <h5>Contactos</h5>
+                <p>
+                  Directorio de contactos por cliente. Área de compras,
+                  administración y personas de referencia para cada cuenta.
+                </p>
+              </div>
+
+            </div>
+          </section>
+        </article>
+
+        <!-- MÓDULO 3: INVENTARIO -->
+        <article>
+          <header>
+            <h3>Inventario</h3>
+            <p>Nunca más perdés una venta por no saber qué tenés en stock.</p>
+          </header>
+
+          <p>
+            Control de stock en tiempo real con movimientos automáticos desde
+            compras y ventas. Sin carga manual — el inventario se actualiza solo.
+          </p>
+
+          <ul>
+            <li>Stock actualizado en tiempo real por producto</li>
+            <li>Alertas automáticas de stock mínimo y reposición</li>
+            <li>Historial completo de cada movimiento de mercadería</li>
+            <li>Valorización del inventario en todo momento</li>
+          </ul>
+        </article>
+
+        <!-- MÓDULO 4: FINANZAS -->
+        <article>
+          <header>
+            <h3>Finanzas</h3>
+            <p>El cierre de mes que antes llevaba 5 días, ahora lleva 1.</p>
+          </header>
+
+          <p>
+            Toda la información financiera consolidada automáticamente
+            desde compras y ventas. Reportes listos para decidir, sin
+            trabajo manual de reconciliación.
+          </p>
+
+          <ul>
+            <li>Cuentas por cobrar y por pagar unificadas</li>
+            <li>Flujo de caja actualizado en tiempo real</li>
+            <li>Reportes de rentabilidad por producto y período</li>
+            <li>Control de costos de importación y tipo de cambio</li>
+          </ul>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+      SECCIÓN 5 — DIFERENCIAL
+      Estrategia: El visitante está comparando opciones. Esta
+      sección controla la narrativa de esa comparación.
+      La tabla de comparación es uno de los elementos con mayor
+      tasa de conversión en B2B — le ahorramos el trabajo al
+      comprador y guiamos sus criterios de evaluación.
+    =========================================================== -->
+    <section id="diferencial">
+
+      <header>
+        <span>Por qué Unspread</span>
+        <h2>No generalizamos. Entendemos tu negocio.</h2>
+        <p>
+          La mayoría de los ERPs fueron construidos para cubrir todos los
+          casos posibles. Nosotros construimos Unspread para cubrir el tuyo.
+        </p>
+      </header>
+
+      <!-- Cards de diferenciación -->
+      <div>
+
+        <article>
+          <h3>Diseñado para negocios con stock</h3>
+          <p>
+            No es un ERP genérico adaptado. Cada flujo y cada pantalla fue
+            pensado para distribuidoras e importadores — porque ese es el
+            único problema que resolvemos.
+          </p>
+          <small>vs. ERPs con 60 módulos de los cuales usás 4</small>
+        </article>
+
+        <article>
+          <h3>Implementación en días, no en meses</h3>
+          <p>
+            Sin consultoras, sin proyectos de 6 meses, sin costos ocultos.
+            Tu equipo operativo en menos de una semana.
+          </p>
+          <small>vs. SAP que requiere una consultora certificada para arrancar</small>
+        </article>
+
+        <article>
+          <h3>Un equipo que habla tu idioma</h3>
+          <p>
+            Nuestro equipo incluye gestión de negocios, data analytics e
+            ingeniería. Cuando hablás con nosotros, no necesitás
+            un traductor técnico.
+          </p>
+          <small>vs. soporte que te manda a leer documentación técnica</small>
+        </article>
+
+        <article>
+          <h3>Data que te ayuda a decidir</h3>
+          <p>
+            No solo registramos lo que pasa — te mostramos qué significa
+            para tu negocio y qué deberías hacer al respecto.
+          </p>
+          <small>vs. reportes que mirás pero no sabés cómo interpretar</small>
+        </article>
+
+      </div>
+
+      <!-- Tabla de comparación -->
+      <table>
+        <caption>Unspread vs. ERPs tradicionales</caption>
+        <thead>
+          <tr>
+            <th scope="col">Criterio</th>
+            <th scope="col">Unspread</th>
+            <th scope="col">ERPs tradicionales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tiempo de implementación</td>
+            <td>Menos de 1 semana</td>
+            <td>3 a 6 meses</td>
+          </tr>
+          <tr>
+            <td>Curva de aprendizaje</td>
+            <td>Horas</td>
+            <td>Semanas o meses</td>
+          </tr>
+          <tr>
+            <td>Pensado para negocios con stock</td>
+            <td>Sí, desde el diseño</td>
+            <td>Adaptado a la fuerza</td>
+          </tr>
+          <tr>
+            <td>Equipo con background en negocios</td>
+            <td>Sí</td>
+            <td>Raramente</td>
+          </tr>
+          <tr>
+            <td>Módulos innecesarios incluidos</td>
+            <td>Ninguno</td>
+            <td>Decenas</td>
+          </tr>
+          <tr>
+            <td>Soporte en español, contexto local</td>
+            <td>Sí</td>
+            <td>Limitado o inexistente</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+
+    <!-- ==========================================================
+      SECCIÓN 6 — EQUIPO FUNDADOR
+      Estrategia: En etapa pre-clientes, el equipo es el activo
+      de credibilidad más poderoso. El comprador B2B decide a quién
+      confiarle la información de su negocio. Un equipo real con
+      caras, nombres y backgrounds claros genera más confianza que
+      cualquier logo en esta etapa.
+
+      El diferencial del equipo de Unspread:
+        - Gestión de Negocios y Tecnología → entiende el problema
+        - Data Analytics → datos que sirven para decidir
+        - Ingeniería Informática → lo construye bien
+    =========================================================== -->
+    <section id="equipo">
+
+      <header>
+        <span>El equipo</span>
+        <h2>Construido por quienes entienden tu problema.</h2>
+        <p>
+          No somos ingenieros que hicieron un software de gestión.
+          Somos un equipo multidisciplinario que entendió los problemas
+          reales de los negocios con stock y construyó la herramienta
+          para resolverlos.
+        </p>
+      </header>
+
+      <div>
+
+        <article>
+          <!--
+            REEMPLAZAR src con foto real del equipo.
+            El atributo alt es crítico para accesibilidad y SEO.
+          -->
+          <img
+            src="foto-fundador-1.jpg"
+            alt="[Tu nombre], Co-Fundador de Unspread, estudiante de Gestión de Negocios y Tecnología en ITBA"
+            width="200"
+            height="200"
+          />
+          <div>
+            <span>Co-Fundador · Producto &amp; Negocios</span>
+            <h3>[Tu nombre]</h3>
+            <p>
+              Gestión de Negocios y Tecnología · ITBA. Diseñó Unspread
+              desde la perspectiva del usuario de negocio — porque entiende
+              de primera mano qué necesita una distribuidora para operar bien.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <img
+            src="foto-fundador-2.jpg"
+            alt="[Nombre], Co-Fundador de Unspread, estudiante de Data Analytics en ITBA"
+            width="200"
+            height="200"
+          />
+          <div>
+            <span>Co-Fundador · Data &amp; Analytics</span>
+            <h3>[Nombre de tu amigo]</h3>
+            <p>
+              Data Analytics · ITBA. Diseñó la arquitectura de datos y
+              los reportes de Unspread para que sean accionables — no
+              solo decorativos.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <img
+            src="foto-fundador-3.jpg"
+            alt="[Nombre], Co-Fundador de Unspread, Ingeniero Informático"
+            width="200"
+            height="200"
+          />
+          <div>
+            <span>Co-Fundador · Ingeniería</span>
+            <h3>[Nombre del ingeniero]</h3>
+            <p>
+              Ingeniero Informático. Construyó la infraestructura técnica
+              de Unspread con foco en escalabilidad y seguridad desde
+              el primer día.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+      SECCIÓN 7 — PRECIOS
+      Estrategia: Mostrar precios permite la auto-calificación
+      del lead. Un lead calificado vale mucho más que muchos leads
+      genéricos — especialmente en B2B donde el ciclo de venta es
+      largo. La transparencia también genera confianza.
+    =========================================================== -->
+    <section id="precios">
+
+      <header>
+        <span>Precios</span>
+        <h2>Simple, transparente, sin sorpresas.</h2>
+        <p>Sin costos ocultos de implementación. Sin cláusulas de permanencia.</p>
+      </header>
+
+      <div>
+
+        <!-- Plan Starter -->
+        <article>
+          <header>
+            <h3>Starter</h3>
+            <p>Para PyMEs que están ordenando su operación</p>
+          </header>
+          <div>
+            <strong>USD 99</strong>
+            <span>/ mes</span>
+          </div>
+          <ul>
+            <li>Hasta 5 usuarios</li>
+            <li>Módulos de Compras, Ventas e Inventario</li>
+            <li>Gestión de proveedores y clientes</li>
+            <li>Reportes básicos de operación</li>
+            <li>Soporte por email</li>
+          </ul>
+          <a href="#demo">Agendar demo</a>
+        </article>
+
+        <!-- Plan Growth — el plan recomendado -->
+        <article>
+          <!-- Badge de recomendación -->
+          <span>Más elegido</span>
+          <header>
+            <h3>Growth</h3>
+            <p>Para empresas que necesitan control total de su operación</p>
+          </header>
+          <div>
+            <strong>USD 249</strong>
+            <span>/ mes</span>
+          </div>
+          <ul>
+            <li>Usuarios ilimitados</li>
+            <li>Los 4 módulos completos (Compras, Ventas, Inventario, Finanzas)</li>
+            <li>Dashboard ejecutivo con KPIs clave</li>
+            <li>Control de costos en moneda extranjera</li>
+            <li>Soporte prioritario por WhatsApp</li>
+            <li>Onboarding personalizado incluido</li>
+          </ul>
+          <a href="#demo">Agendar demo</a>
+        </article>
+
+        <!-- Plan Enterprise -->
+        <article>
+          <header>
+            <h3>Enterprise</h3>
+            <p>Para operaciones complejas con necesidades específicas</p>
+          </header>
+          <div>
+            <strong>A medida</strong>
+          </div>
+          <ul>
+            <li>Todo lo de Growth incluido</li>
+            <li>Integraciones con sistemas existentes</li>
+            <li>SLA de disponibilidad garantizado</li>
+            <li>Gerente de cuenta dedicado</li>
+            <li>Capacitación presencial del equipo</li>
+          </ul>
+          <a href="#demo">Hablar con el equipo</a>
+        </article>
+
+      </div>
+
+      <p>
+        ¿No estás seguro qué plan necesitás?
+        <a href="#demo">Hablemos en la demo</a> —
+        te recomendamos el que mejor se adapta a tu operación.
+      </p>
+
+    </section>
+
+
+    <!-- ==========================================================
+      SECCIÓN 8 — FAQ
+      Estrategia: Estas 5 preguntas cubren el 80% de las razones
+      por las que un lead interesado NO agenda una demo.
+      Responderlas en la landing elimina esa fricción.
+
+      Se usa el elemento nativo <details>/<summary> de HTML5 —
+      funciona como acordeón sin JavaScript. Cuando veamos JS
+      en la materia se puede mejorar con animación.
+    =========================================================== -->
+    <section id="faq">
+
+      <header>
+        <span>Preguntas frecuentes</span>
+        <h2>Todo lo que necesitás saber antes de la demo</h2>
+      </header>
+
+      <dl>
+
+        <div>
+          <dt>
+            <details>
+              <summary>¿Cuánto tarda la implementación?</summary>
+              <dd>
+                La mayoría de los negocios están operativos en menos de una semana.
+                Te acompañamos en el proceso de carga inicial de productos,
+                proveedores y clientes. No necesitás consultora ni conocimiento
+                técnico previo.
+              </dd>
+            </details>
+          </dt>
+        </div>
+
+        <div>
+          <dt>
+            <details>
+              <summary>¿Se integra con mi sistema de facturación actual?</summary>
+              <dd>
+                Unspread incluye facturación integrada, por lo que en la mayoría
+                de los casos reemplaza al sistema anterior. Si tenés un sistema
+                específico que necesitás mantener, lo evaluamos en la demo y
+                buscamos la mejor solución para tu caso.
+              </dd>
+            </details>
+          </dt>
+        </div>
+
+        <div>
+          <dt>
+            <details>
+              <summary>¿Qué pasa con mi data si decido no seguir?</summary>
+              <dd>
+                Tus datos son tuyos. Podés exportar todo tu historial en formatos
+                estándar (Excel y CSV) en cualquier momento, sin restricciones y
+                sin costo adicional.
+              </dd>
+            </details>
+          </dt>
+        </div>
+
+        <div>
+          <dt>
+            <details>
+              <summary>¿Necesito capacitar a todo mi equipo para usarlo?</summary>
+              <dd>
+                Diseñamos Unspread para que cualquier persona del equipo lo aprenda
+                en horas, no en semanas. Incluye tutoriales guiados dentro de la
+                plataforma y soporte por WhatsApp con respuesta el mismo día.
+              </dd>
+            </details>
+          </dt>
+        </div>
+
+        <div>
+          <dt>
+            <details>
+              <summary>¿Funciona para negocios que manejan precios en dólares?</summary>
+              <dd>
+                Sí. El módulo de Finanzas e Inventario está preparado para trabajar
+                con múltiples monedas y actualización de tipo de cambio. Es una
+                funcionalidad pensada especialmente para importadores y distribuidoras
+                que compran en el exterior y venden en pesos.
+              </dd>
+            </details>
+          </dt>
+        </div>
+
+      </dl>
+
+    </section>
+
+
+    <!-- ==========================================================
+      SECCIÓN 9 — CTA FINAL + FORMULARIO DE DEMO
+      Estrategia: Dos caminos de conversión:
+        1. Listos para avanzar → completan el formulario
+        2. Todavía evaluando → links a precios y diferencial
+
+      El micro-copy "30 minutos, sin compromiso" baja la barrera
+      percibida del CTA — agendar una demo suena a presión de
+      venta; 30 minutos sin compromiso suena a conversación.
+
+      Cuando llegue JS: validación del formulario y envío a un
+      servicio como Formspree o EmailJS sin backend propio.
+    =========================================================== -->
+    <section id="demo">
+
+      <header>
+        <h2>¿Listo para ver Unspread <em>en tu empresa?</em></h2>
+        <p>
+          30 minutos. Sin compromiso. Te mostramos exactamente cómo
+          funciona para tu tipo de negocio.
+        </p>
+      </header>
+
+      <form action="#" method="post" novalidate>
+
+        <div>
+          <label for="nombre">Nombre completo</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Juan García"
+            required
+            autocomplete="name"
+          />
+        </div>
+
+        <div>
+          <label for="empresa">Empresa</label>
+          <input
+            type="text"
+            id="empresa"
+            name="empresa"
+            placeholder="Distribuidora García S.A."
+            required
+            autocomplete="organization"
+          />
+        </div>
+
+        <div>
+          <label for="email">Email de trabajo</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="juan@empresa.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div>
+          <label for="telefono">Teléfono (opcional)</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="+54 11 1234 5678"
+            autocomplete="tel"
+          />
+        </div>
+
+        <div>
+          <label for="tipo-negocio">Tipo de negocio</label>
+          <select id="tipo-negocio" name="tipo-negocio" required>
+            <option value="" disabled selected>Seleccioná tu tipo de negocio</option>
+            <option value="distribuidora">Distribuidora / Mayorista</option>
+            <option value="importador">Importador / Exportador</option>
+            <option value="ambos">Distribuidora e Importador</option>
+            <option value="otro">Otro negocio con stock</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="empleados">Cantidad de empleados</label>
+          <select id="empleados" name="empleados" required>
+            <option value="" disabled selected>Seleccioná un rango</option>
+            <option value="1-10">1 a 10 empleados</option>
+            <option value="11-50">11 a 50 empleados</option>
+            <option value="51-200">51 a 200 empleados</option>
+            <option value="200+">Más de 200 empleados</option>
+          </select>
+        </div>
+
+        <button type="submit">Quiero agendar mi demo gratuita →</button>
+
+        <p>
+          <small>
+            Al enviar este formulario aceptás que nos comuniquemos con vos
+            para coordinar la demo. Sin spam. Sin compromiso de compra.
+          </small>
+        </p>
+
+      </form>
+
+      <!-- Salida alternativa para los que todavía evalúan -->
+      <p>
+        ¿Todavía estás evaluando?
+        <a href="#precios">Revisá los precios</a> o
+        <a href="#diferencial">conocé por qué Unspread es diferente</a>.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+    FOOTER
+    Estructura semántica con navegación clara y datos de contacto.
+    Cuando llegue CSS: fondo oscuro, layout en columnas con grid.
+  ============================================================ -->
+  <footer>
+
+    <div>
+
+      <!-- Identidad y tagline -->
+      <div>
+        <a href="#inicio">Unspread</a>
+        <p>
+          El ERP para negocios con stock.<br />
+          Compras, Ventas, Inventario y Finanzas — en un solo lugar.
+        </p>
+      </div>
+
+      <!-- Navegación del producto -->
+      <nav aria-label="Módulos del producto">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#producto">Compras y Proveedores</a></li>
+          <li><a href="#producto">Ventas y Clientes</a></li>
+          <li><a href="#producto">Inventario</a></li>
+          <li><a href="#producto">Finanzas</a></li>
+        </ul>
+      </nav>
+
+      <!-- Navegación de la empresa -->
+      <nav aria-label="Información de la empresa">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#equipo">El equipo</a></li>
+          <li><a href="#diferencial">Por qué Unspread</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#demo">Agendar demo</a></li>
+        </ul>
+      </nav>
+
+      <!-- Contacto -->
+      <div>
+        <h4>Contacto</h4>
+        <address>
+          <ul>
+            <li><a href="mailto:hola@unspread.com">hola@unspread.com</a></li>
+            <li><a href="https://wa.me/5491100000000">WhatsApp</a></li>
+            <li><a href="https://linkedin.com/company/unspread">LinkedIn</a></li>
+          </ul>
+        </address>
+      </div>
+
+    </div>
+
+    <!-- Pie legal -->
+    <div>
+      <p>
+        <small>&copy; 2025 Unspread. Todos los derechos reservados.</small>
+      </p>
+      <nav aria-label="Legal">
+        <ul>
+          <li><a href="/privacidad">Política de privacidad</a></li>
+          <li><a href="/terminos">Términos de uso</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </footer>
+
+</body>
+</html>
