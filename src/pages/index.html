@@ -6,39 +6,11 @@
   <meta name="description" content="Unspread, el ERP para negocios con stock. Compras, Ventas, Inventario y Finanzas en un solo sistema." />
   <title>Unspread | ERP para negocios con stock</title>
 
-  <!--
-    TIPOGRAFÍA — DECISIÓN BASADA EN DATOS
-    • Plus Jakarta Sans (700-800) → headings
-      Geométrico, preciso, listado por Typ.io específicamente para SaaS.
-      Transmite tecnología sin frialdad. Usado en múltiples ERPs B2B.
-    • Inter (400-600) → body, labels, UI
-      Estándar de facto en software empresarial (Linear, Retool, Notion).
-      Diseñado para pantallas. Jakob's Law: lo familiar genera confianza.
-    • font-display:swap → garantiza LCP < 2.5s
-      (Google: bounce +32% si LCP supera 2.5s)
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /*
-      PALETA — DECISIÓN BASADA EN ANÁLISIS DEL SOFTWARE REAL
-      ────────────────────────────────────────────────────────
-      Extrayendo del screenshot del software (Unspread app):
-        Dark bg:   #0f1117  (topbar/sidebar)
-        Sidebar:   #1a1d26
-        Accent:    #2563eb  (azul del logo y botones)
-        Surfaces:  #ffffff  (cards, contenido)
-        Borders:   #e2e8f0
-
-      Research: "El tono #1e40af reduce ansiedad y aumenta
-      percepción de competencia en webs corporativas."
-      (ColorPickerCode, 2026)
-
-      Decisión: fondo #ffffff puro (no celeste), negro como
-      elemento de autoridad, azul como único acento de color.
-    */
     :root {
       --bg:           #ffffff;
       --bg-subtle:    #f8fafc;
@@ -118,11 +90,8 @@
       border-radius: 4px;
     }
 
-    /* ── UTILS ──────────────────────────────────────────────── */
-    .container {
-      width: min(var(--max-w), 100% - 2.5rem);
-      margin: 0 auto;
-    }
+    /* ── UTILS ─────────────────────────────────────────────── */
+    .container { width: min(var(--max-w), 100% - 2.5rem); margin: 0 auto; }
     .section       { padding: 5.5rem 0; }
     .section-tight { padding: 3.5rem 0; }
 
@@ -130,71 +99,47 @@
       position: absolute; top: -120px; left: 1rem; z-index: 9999;
       background: var(--dark); color: #fff;
       padding: .7rem 1.1rem; border-radius: 8px;
-      font-family: var(--font-body);
       transition: top .2s ease;
     }
     .skip-link:focus { top: 1rem; }
 
-    /* ── SECTION HEADER ─────────────────────────────────────── */
-    .sh            { margin-bottom: 2.5rem; }
+    /* ── SECTION HEADER ────────────────────────────────────── */
+    .sh { margin-bottom: 2.5rem; }
     .sh__eye {
       display: inline-flex; align-items: center;
       font-family: var(--font-body); font-size: .72rem; font-weight: 600;
       letter-spacing: .1em; text-transform: uppercase;
       color: var(--primary); margin-bottom: .85rem;
     }
-    .sh__eye--inv  { color: var(--primary-mid); }
     .sh h2 {
       font-family: var(--font-display);
       font-size: clamp(2rem, 3.8vw, 3rem);
       font-weight: 800; line-height: 1.1; letter-spacing: -.03em;
       color: var(--text); margin-bottom: .75rem;
     }
-    .sh--inv h2    { color: var(--dark-text); }
-    .sh__sub {
-      color: var(--muted); font-size: .97rem;
-      max-width: 60ch; line-height: 1.72;
-    }
+    .sh--inv h2 { color: var(--dark-text); }
+    .sh__sub { color: var(--muted); font-size: .97rem; max-width: 60ch; line-height: 1.72; }
     .sh--inv .sh__sub { color: var(--dark-muted); }
 
-    /* ── BOTONES ────────────────────────────────────────────── */
-    /*
-      • Contraste alto en botones → +50% visibilidad (CTA Statistics 2025)
-      • Texto consultivo vs genérico → +12.6% conversiones (ConversionTeam 2025)
-      • 1ra persona → +90% CTR (HubSpot)
-    */
+    /* ── BOTONES ───────────────────────────────────────────── */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
-      padding: .82rem 1.5rem;
-      border-radius: var(--r-sm);
+      padding: .82rem 1.5rem; border-radius: var(--r-sm);
       font-family: var(--font-display); font-weight: 700; font-size: .9rem;
       letter-spacing: -.01em; white-space: nowrap;
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
-    .btn--primary {
-      background: var(--primary); color: #fff;
-      box-shadow: var(--shadow-blue);
-    }
-    .btn--primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-blue-lg);
-    }
+    .btn--primary { background: var(--primary); color: #fff; box-shadow: var(--shadow-blue); }
+    .btn--primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-blue-lg); }
     .btn--primary:active { transform: none; }
-    .btn--dark {
-      background: var(--dark); color: #fff;
-      box-shadow: var(--shadow-md);
-    }
+    .btn--dark { background: var(--dark); color: #fff; box-shadow: var(--shadow-md); }
     .btn--dark:hover { background: var(--dark-2); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-    .btn--ghost {
-      background: transparent; color: var(--text);
-      border: 1px solid var(--border-strong);
-    }
+    .btn--ghost { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
     .btn--ghost:hover { background: var(--bg-subtle); transform: translateY(-2px); }
     .btn--full { width: 100%; justify-content: center; }
     .btn--sm   { padding: .58rem 1rem; font-size: .84rem; }
 
-    /* ── NAV ────────────────────────────────────────────────── */
+    /* ── NAV ───────────────────────────────────────────────── */
     .site-header {
       position: sticky; top: 0; z-index: 100;
       background: rgba(255,255,255,.94);
@@ -204,8 +149,7 @@
     }
     .navbar {
       height: var(--nav-h);
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
     }
     .brand {
       display: inline-flex; align-items: center; gap: .62rem;
@@ -224,6 +168,31 @@
     }
     .nav-links a:hover { color: var(--text); background: var(--bg-subtle); }
     .nav-actions { display: flex; align-items: center; gap: .55rem; flex-shrink: 0; }
+
+    /* Botón carrito en el nav */
+    .btn-cart {
+      position: relative;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: var(--r-sm);
+      border: 1px solid var(--border-strong);
+      background: transparent; color: var(--text);
+      transition: background .15s, transform .18s;
+      flex-shrink: 0;
+    }
+    .btn-cart:hover { background: var(--bg-subtle); transform: translateY(-1px); }
+    .btn-cart svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    /* Badge con cantidad de ítems */
+    .cart-badge {
+      position: absolute; top: -5px; right: -5px;
+      background: var(--primary); color: #fff;
+      font-size: .62rem; font-weight: 700;
+      width: 17px; height: 17px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      /* Oculto cuando está vacío */
+      opacity: 0; transform: scale(0);
+      transition: opacity .2s, transform .22s cubic-bezier(.22,1,.36,1);
+    }
+    .cart-badge.visible { opacity: 1; transform: scale(1); }
 
     .nav-toggle {
       display: none; align-items: center; justify-content: center;
@@ -247,7 +216,111 @@
     .nav-open .nav-toggle span::before { transform: rotate(45deg) translate(0,6.5px); }
     .nav-open .nav-toggle span::after  { transform: rotate(-45deg) translate(0,-6.5px); }
 
-    /* ── HERO ───────────────────────────────────────────────── */
+    /* ── CART SIDEBAR ──────────────────────────────────────── */
+    /* Overlay oscuro detrás del sidebar */
+    .cart-overlay {
+      position: fixed; inset: 0; z-index: 300;
+      background: rgba(15,17,23,.45);
+      backdrop-filter: blur(2px);
+      opacity: 0; pointer-events: none;
+      transition: opacity .28s ease;
+    }
+    .cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+    /* El sidebar en sí */
+    .cart-sidebar {
+      position: fixed; top: 0; right: 0; bottom: 0; z-index: 301;
+      width: min(400px, 100vw);
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      box-shadow: -8px 0 40px rgba(15,17,23,.12);
+      display: flex; flex-direction: column;
+      transform: translateX(100%);
+      transition: transform .32s cubic-bezier(.22,1,.36,1);
+    }
+    .cart-sidebar.open { transform: translateX(0); }
+
+    /* Header del sidebar */
+    .cs-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .cs-head h2 {
+      font-family: var(--font-display); font-size: 1.05rem; font-weight: 800;
+      letter-spacing: -.02em;
+    }
+    .cs-close {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 8px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--muted); font-size: 1.1rem; line-height: 1;
+      transition: background .15s, color .15s;
+    }
+    .cs-close:hover { background: var(--bg-subtle); color: var(--text); }
+
+    /* Lista de ítems del carrito */
+    .cs-items {
+      flex: 1; overflow-y: auto;
+      padding: 1rem 1.4rem;
+      display: flex; flex-direction: column; gap: .6rem;
+    }
+
+    /* Estado vacío */
+    .cs-empty {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: .6rem;
+      padding: 2rem; text-align: center; color: var(--muted);
+    }
+    .cs-empty svg { width: 48px; height: 48px; stroke: var(--border-strong); fill: none; stroke-width: 1.4; }
+    .cs-empty p { font-size: .92rem; }
+
+    /* Ítem del carrito */
+    .cs-item {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: .82rem 1rem;
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+    }
+    .cs-item__info { flex: 1; min-width: 0; }
+    .cs-item__name {
+      font-family: var(--font-display); font-weight: 700; font-size: .88rem;
+      color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .cs-item__type { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
+    .cs-item__price {
+      font-family: var(--font-display); font-weight: 800; font-size: .95rem;
+      color: var(--dark); white-space: nowrap;
+    }
+    .cs-item__remove {
+      display: flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; border-radius: 6px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--muted); font-size: .85rem; flex-shrink: 0;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .cs-item__remove:hover { background: #fee2e2; border-color: #fca5a5; color: #dc2626; }
+
+    /* Footer del sidebar con total y botón */
+    .cs-foot {
+      border-top: 1px solid var(--border);
+      padding: 1.2rem 1.4rem;
+      flex-shrink: 0;
+      display: flex; flex-direction: column; gap: .8rem;
+    }
+    .cs-total-row {
+      display: flex; align-items: baseline; justify-content: space-between;
+    }
+    .cs-total-label { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    .cs-total-num {
+      font-family: var(--font-display); font-size: 1.55rem; font-weight: 800;
+      color: var(--dark); letter-spacing: -.03em;
+    }
+    .cs-total-num small { font-size: .85rem; font-weight: 500; color: var(--muted); }
+    .cs-note { font-size: .78rem; color: var(--muted); }
+
+    /* ── HERO ──────────────────────────────────────────────── */
     .hero { padding: 5rem 0 4rem; }
     .hero-grid {
       display: grid;
@@ -267,14 +340,8 @@
       color: var(--text); margin-bottom: 1.1rem;
     }
     .hero h1 strong { color: var(--primary); }
-    .hero__copy {
-      color: var(--muted); font-size: 1rem;
-      max-width: 50ch; line-height: 1.74;
-    }
-    .hero__actions {
-      display: flex; gap: .7rem; flex-wrap: wrap;
-      margin: 1.8rem 0 1.7rem;
-    }
+    .hero__copy { color: var(--muted); font-size: 1rem; max-width: 50ch; line-height: 1.74; }
+    .hero__actions { display: flex; gap: .7rem; flex-wrap: wrap; margin: 1.8rem 0 1.7rem; }
     .hero__pills { display: flex; flex-wrap: wrap; gap: .55rem; }
     .hero__pill {
       display: inline-flex; align-items: center; gap: .4rem;
@@ -287,389 +354,164 @@
       background: var(--ok-text); flex-shrink: 0;
     }
 
-    /* Dashboard mockup — espeja la UI real del software */
+    /* Dashboard mockup */
     .hero-visual { display: flex; justify-content: flex-end; }
     .dash {
       width: 100%; max-width: 510px;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: var(--r-xl); box-shadow: var(--shadow-lg); overflow: hidden;
     }
     .dash__bar {
       display: flex; align-items: center; justify-content: space-between; gap: .8rem;
-      padding: .85rem 1.05rem;
-      background: var(--dark);
+      padding: .85rem 1.05rem; background: var(--dark);
     }
     .dash__brand {
       display: flex; align-items: center; gap: .52rem;
-      font-family: var(--font-display); font-weight: 700; font-size: .82rem;
-      color: var(--dark-text);
+      font-family: var(--font-display); font-weight: 700; font-size: .82rem; color: var(--dark-text);
     }
     .dash__brand img { width: 26px; height: 26px; }
     .dash__badge {
       background: rgba(52,211,153,.1); color: #34d399;
       border: 1px solid rgba(52,211,153,.2);
-      padding: .18rem .62rem; border-radius: 999px;
-      font-size: .72rem; font-weight: 600;
+      padding: .18rem .62rem; border-radius: 999px; font-size: .72rem; font-weight: 600;
     }
-    .dash__metrics {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: .65rem; padding: .8rem;
-    }
-    .dash__tile {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-sm); padding: .75rem .8rem;
-    }
+    .dash__metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: .65rem; padding: .8rem; }
+    .dash__tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: .75rem .8rem; }
     .dash__tile-lbl { color: var(--muted); font-size: .72rem; margin-bottom: .2rem; }
-    .dash__tile-val {
-      font-family: var(--font-display); font-size: 1.28rem;
-      font-weight: 800; color: var(--dark); line-height: 1.1;
-    }
-    .dash__bottom {
-      display: grid; grid-template-columns: 1.2fr .8fr;
-      gap: .65rem; padding: 0 .8rem .8rem;
-    }
-    .dash__card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-sm); padding: .78rem;
-    }
-    .dash__card h4 {
-      font-family: var(--font-display); font-size: .78rem; font-weight: 700;
-      color: var(--dark); margin-bottom: .5rem;
-    }
+    .dash__tile-val { font-family: var(--font-display); font-size: 1.28rem; font-weight: 800; color: var(--dark); line-height: 1.1; }
+    .dash__bottom { display: grid; grid-template-columns: 1.2fr .8fr; gap: .65rem; padding: 0 .8rem .8rem; }
+    .dash__card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: .78rem; }
+    .dash__card h4 { font-family: var(--font-display); font-size: .78rem; font-weight: 700; color: var(--dark); margin-bottom: .5rem; }
     .proc-list { display: grid; gap: .35rem; }
     .proc-item {
       display: flex; align-items: center; justify-content: space-between; gap: .4rem;
-      padding: .42rem .52rem; background: var(--bg-subtle);
-      border-radius: 7px; font-size: .75rem;
+      padding: .42rem .52rem; background: var(--bg-subtle); border-radius: 7px; font-size: .75rem;
     }
     .proc-item strong { color: var(--text); font-weight: 600; }
     .proc-item span   { color: var(--muted); }
-    .bars {
-      display: flex; align-items: flex-end; gap: .26rem;
-      height: 84px; padding: .22rem 0;
-    }
-    .bars i {
-      flex: 1; border-radius: 3px 3px 2px 2px; font-style: normal;
-      background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
-    }
-    .bars i:nth-child(1){height:36%}
-    .bars i:nth-child(2){height:57%}
-    .bars i:nth-child(3){height:46%}
-    .bars i:nth-child(4){height:73%}
-    .bars i:nth-child(5){height:91%}
+    .bars { display: flex; align-items: flex-end; gap: .26rem; height: 84px; padding: .22rem 0; }
+    .bars i { flex: 1; border-radius: 3px 3px 2px 2px; font-style: normal; background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%); }
+    .bars i:nth-child(1){height:36%} .bars i:nth-child(2){height:57%} .bars i:nth-child(3){height:46%}
+    .bars i:nth-child(4){height:73%} .bars i:nth-child(5){height:91%}
 
-    /* ── STATS BAND DARK ────────────────────────────────────── */
-    /*
-      Sección oscura con números grandes → percepción de autoridad.
-      (B2B SaaS Website Examples, Vezadigital 2025)
-      Contraste alto = números de alto impacto en escaneo F-pattern.
-    */
+    /* ── STATS BAND DARK ───────────────────────────────────── */
     .stats-band { background: var(--dark); padding: 3.5rem 0; }
-    .stats-band__grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
-    }
-    .stats-band__item {
-      padding: 1.5rem 2rem;
-      border-right: 1px solid var(--dark-border);
-      text-align: center;
-    }
+    .stats-band__grid { display: grid; grid-template-columns: repeat(3,1fr); }
+    .stats-band__item { padding: 1.5rem 2rem; border-right: 1px solid var(--dark-border); text-align: center; }
     .stats-band__item:last-child { border-right: none; }
-    .stats-band__num {
-      font-family: var(--font-display); font-size: 2.8rem;
-      font-weight: 800; color: #fff; letter-spacing: -.04em;
-      line-height: 1; margin-bottom: .42rem;
-    }
+    .stats-band__num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1; margin-bottom: .42rem; }
     .stats-band__num span { color: var(--primary); }
     .stats-band__lbl { color: var(--dark-muted); font-size: .9rem; line-height: 1.5; }
 
-    /* ── GRIDS ──────────────────────────────────────────────── */
-    .grid-3     { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
-    .grid-2     { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+    /* ── GRIDS & CARDS ─────────────────────────────────────── */
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
 
-    /* ── CARDS ──────────────────────────────────────────────── */
     .card {
       background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-md); padding: 1.5rem;
-      box-shadow: var(--shadow-xs);
+      border-radius: var(--r-md); padding: 1.5rem; box-shadow: var(--shadow-xs);
       transition: box-shadow .2s ease, transform .2s ease;
     }
     .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .card__icon {
-      width: 38px; height: 38px; border-radius: 9px;
-      background: var(--primary-soft); border: 1px solid var(--primary-mid);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; margin-bottom: .9rem;
-    }
-    .card h3 {
-      font-family: var(--font-display); font-size: 1rem; font-weight: 700;
-      margin-bottom: .4rem;
-    }
+    .card__icon { width: 38px; height: 38px; border-radius: 9px; background: var(--primary-soft); border: 1px solid var(--primary-mid); display: flex; align-items: center; justify-content: center; font-size: 1rem; margin-bottom: .9rem; }
+    .card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
     .card p { color: var(--muted); font-size: .9rem; line-height: 1.62; }
-    .mod-num {
-      font-size: .7rem; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--primary); margin-bottom: .52rem;
-    }
+    .mod-num { font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); margin-bottom: .52rem; }
     .mod-sub { color: var(--primary); font-weight: 500; font-size: .87rem; margin-bottom: .52rem; }
 
-    /* ── SEARCH ─────────────────────────────────────────────── */
-    .search-box {
-      background: var(--bg-subtle); border: 1px solid var(--border);
-      border-radius: var(--r-lg); padding: 1.8rem;
-    }
+    /* ── SEARCH ────────────────────────────────────────────── */
+    .search-box { background: var(--bg-subtle); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.8rem; }
     .search-row { display: flex; gap: .75rem; align-items: flex-end; flex-wrap: wrap; }
     .field { display: grid; gap: .38rem; flex: 1; min-width: 220px; }
     .field label { font-weight: 600; font-size: .85rem; color: var(--text-2); }
-    .field input,
-    .field select,
-    .field textarea {
+    .field input, .field select, .field textarea {
       width: 100%; background: var(--surface); color: var(--text);
       border: 1px solid var(--border); border-radius: var(--r-sm);
       padding: .78rem .95rem; font-size: .93rem;
       transition: border-color .15s, box-shadow .15s;
     }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37,99,235,.1);
-      outline: none;
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,.1); outline: none;
     }
     .field textarea { min-height: 120px; resize: vertical; }
 
-    /* ── PLANES ─────────────────────────────────────────────── */
-    .plans-grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 1.2rem; align-items: start; margin-top: 1rem;
-    }
-    .plan {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-lg); overflow: hidden;
-      box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
+    /* ── PLANES ────────────────────────────────────────────── */
+    .plans-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; align-items: start; margin-top: 1rem; }
+    .plan { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease; }
     .plan:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .plan--feat {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 1px var(--primary), var(--shadow-md);
-    }
+    .plan--feat { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary), var(--shadow-md); }
     .plan--feat:hover { box-shadow: 0 0 0 1px var(--primary), var(--shadow-lg); }
     .plan__img { padding: .82rem .82rem 0; }
-    .plan__img img {
-      width: 100%; border-radius: var(--r-sm); border: 1px solid var(--border);
-    }
-    .plan__body {
-      display: flex; flex-direction: column; gap: .88rem;
-      padding: 1.05rem; flex: 1;
-    }
-    .plan__tag {
-      display: inline-flex; align-items: center;
-      background: var(--primary); color: #fff;
-      padding: .2rem .68rem; border-radius: 999px;
-      font-size: .68rem; font-weight: 700; letter-spacing: .07em;
-      text-transform: uppercase; width: fit-content;
-    }
-    .plan h3 {
-      font-family: var(--font-display); font-size: 1.18rem;
-      font-weight: 800; letter-spacing: -.02em;
-    }
-    .plan__sub  { color: var(--muted); font-size: .87rem; }
-    .plan__price {
-      font-family: var(--font-display); font-size: 1.65rem;
-      font-weight: 800; color: var(--dark); letter-spacing: -.03em; line-height: 1;
-    }
+    .plan__img img { width: 100%; border-radius: var(--r-sm); border: 1px solid var(--border); }
+    .plan__body { display: flex; flex-direction: column; gap: .88rem; padding: 1.05rem; flex: 1; }
+    .plan__tag { display: inline-flex; align-items: center; background: var(--primary); color: #fff; padding: .2rem .68rem; border-radius: 999px; font-size: .68rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; width: fit-content; }
+    .plan h3 { font-family: var(--font-display); font-size: 1.18rem; font-weight: 800; letter-spacing: -.02em; }
+    .plan__sub { color: var(--muted); font-size: .87rem; }
+    .plan__price { font-family: var(--font-display); font-size: 1.65rem; font-weight: 800; color: var(--dark); letter-spacing: -.03em; line-height: 1; }
     .plan__price small { font-size: .88rem; font-weight: 500; color: var(--muted); }
     .plan__list { display: grid; gap: .4rem; flex: 1; }
-    .plan__list li {
-      display: flex; align-items: flex-start; gap: .48rem;
-      color: var(--muted); font-size: .87rem;
-    }
-    .plan__list li::before {
-      content: '✓'; color: var(--primary); font-weight: 700;
-      flex-shrink: 0; font-size: .78rem; margin-top: .1em;
-    }
+    .plan__list li { display: flex; align-items: flex-start; gap: .48rem; color: var(--muted); font-size: .87rem; }
+    .plan__list li::before { content: '✓'; color: var(--primary); font-weight: 700; flex-shrink: 0; font-size: .78rem; margin-top: .1em; }
     .plan__action { margin-top: auto; padding-top: .3rem; }
 
-    /* ── EXTRAS ─────────────────────────────────────────────── */
-    .extras-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem;
-    }
-    .extra {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-lg); overflow: hidden;
-      box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
+    /* ── EXTRAS ────────────────────────────────────────────── */
+    .extras-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+    .extra { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease; }
     .extra:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
     .extra__img { padding: .82rem .82rem 0; }
-    .extra__img img {
-      width: 100%; border-radius: var(--r-sm); border: 1px solid var(--border);
-    }
-    .extra__body {
-      display: flex; flex-direction: column; gap: .68rem;
-      padding: 1.05rem; flex: 1;
-    }
-    .extra h3 {
-      font-family: var(--font-display); font-size: 1.02rem; font-weight: 700;
-    }
+    .extra__img img { width: 100%; border-radius: var(--r-sm); border: 1px solid var(--border); }
+    .extra__body { display: flex; flex-direction: column; gap: .68rem; padding: 1.05rem; flex: 1; }
+    .extra h3 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; }
     .extra__sub { color: var(--muted); font-size: .87rem; }
-    .extra__price {
-      font-family: var(--font-display); font-size: 1.38rem;
-      font-weight: 800; color: var(--dark); letter-spacing: -.02em;
-    }
+    .extra__price { font-family: var(--font-display); font-size: 1.38rem; font-weight: 800; color: var(--dark); letter-spacing: -.02em; }
     .extra__action { margin-top: auto; }
 
-    /* ── CARRITO ────────────────────────────────────────────── */
-    .cart-wrap {
-      background: var(--bg-subtle); border: 1px solid var(--border);
-      border-radius: var(--r-xl); padding: 2rem;
-    }
-    .cart-grid {
-      display: grid; grid-template-columns: 1.1fr .9fr;
-      gap: 1.2rem; align-items: start;
-    }
-    .cart-box {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-md); padding: 1.25rem; box-shadow: var(--shadow-xs);
-    }
-    .cart-box h3 {
-      font-size: .7rem; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--muted); margin-bottom: .88rem;
-    }
-    .cart-items { display: grid; gap: .5rem; }
-    .cart-item {
-      display: flex; align-items: center; justify-content: space-between; gap: .8rem;
-      padding: .7rem .88rem; background: var(--bg-subtle);
-      border: 1px solid var(--border); border-radius: 9px;
-      font-size: .9rem; font-weight: 500;
-    }
-    .cart-item__price { color: var(--dark); font-weight: 700; white-space: nowrap; }
-    .cart-total {
-      font-family: var(--font-display); font-size: 2rem;
-      font-weight: 800; color: var(--dark); letter-spacing: -.03em;
-      margin: .52rem 0 .62rem;
-    }
-    .cart-note {
-      color: var(--muted); font-size: .84rem; margin-bottom: 1.05rem; line-height: 1.6;
-    }
-
-    /* ── TABLA ──────────────────────────────────────────────── */
-    .table-wrap {
-      overflow-x: auto; margin-top: 1.8rem;
-      border: 1px solid var(--border); border-radius: var(--r-md);
-      box-shadow: var(--shadow-xs);
-    }
-    table {
-      width: 100%; border-collapse: collapse;
-      background: var(--surface); min-width: 480px;
-    }
-    caption {
-      text-align: left; padding: 1rem 1rem .4rem;
-      font-family: var(--font-display); font-weight: 700;
-      color: var(--dark); font-size: .95rem;
-    }
+    /* ── TABLA ─────────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; margin-top: 1.8rem; border: 1px solid var(--border); border-radius: var(--r-md); box-shadow: var(--shadow-xs); }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); min-width: 480px; }
+    caption { text-align: left; padding: 1rem 1rem .4rem; font-family: var(--font-display); font-weight: 700; color: var(--dark); font-size: .95rem; }
     th, td { text-align: left; padding: .88rem 1.1rem; border-bottom: 1px solid var(--border); }
-    th {
-      background: var(--bg-subtle);
-      font-size: .78rem; font-weight: 600;
-      letter-spacing: .05em; text-transform: uppercase; color: var(--muted);
-    }
+    th { background: var(--bg-subtle); font-size: .78rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
     tbody tr:last-child td { border-bottom: none; }
     tbody tr:hover td { background: var(--bg-subtle); }
     td { color: var(--muted); font-size: .92rem; }
     td:first-child { color: var(--text); font-weight: 600; }
     td:nth-child(2) { color: var(--primary-dark); font-weight: 600; }
 
-    /* ── FAQ ────────────────────────────────────────────────── */
+    /* ── FAQ ───────────────────────────────────────────────── */
     .faq-list { display: grid; gap: .58rem; }
-    .faq {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-xs);
-    }
-    .faq summary {
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-      padding: 1.05rem 1.28rem; cursor: pointer;
-      font-family: var(--font-display); font-weight: 700; font-size: .94rem;
-      color: var(--text); list-style: none; user-select: none;
-    }
+    .faq { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-xs); }
+    .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.05rem 1.28rem; cursor: pointer; font-family: var(--font-display); font-weight: 700; font-size: .94rem; color: var(--text); list-style: none; user-select: none; }
     .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after {
-      content: '+'; font-size: 1.25rem; font-weight: 300; color: var(--muted);
-      flex-shrink: 0; line-height: 1; transition: transform .2s;
-    }
+    .faq summary::after { content: '+'; font-size: 1.25rem; font-weight: 300; color: var(--muted); flex-shrink: 0; line-height: 1; transition: transform .2s; }
     details[open] .faq summary::after { transform: rotate(45deg); }
     details[open] .faq summary { border-bottom: 1px solid var(--border); }
     .faq__body { padding: 1rem 1.28rem; color: var(--muted); font-size: .91rem; line-height: 1.65; }
 
-    /* ── DEMO ───────────────────────────────────────────────── */
-    .demo-wrap {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-xl); padding: 2.5rem;
-      box-shadow: var(--shadow-md);
-      display: grid; grid-template-columns: .82fr 1.18fr; gap: 3.5rem; align-items: start;
-    }
-    .demo-aside__eye {
-      display: inline-flex;
-      font-size: .72rem; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--primary); margin-bottom: .88rem;
-    }
-    .demo-aside h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 2.8vw, 2.1rem);
-      font-weight: 800; line-height: 1.15; letter-spacing: -.03em; margin-bottom: .7rem;
-    }
+    /* ── DEMO ──────────────────────────────────────────────── */
+    .demo-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 2.5rem; box-shadow: var(--shadow-md); display: grid; grid-template-columns: .82fr 1.18fr; gap: 3.5rem; align-items: start; }
+    .demo-aside__eye { display: inline-flex; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); margin-bottom: .88rem; }
+    .demo-aside h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 2.8vw, 2.1rem); font-weight: 800; line-height: 1.15; letter-spacing: -.03em; margin-bottom: .7rem; }
     .demo-aside p { color: var(--muted); font-size: .94rem; line-height: 1.65; }
     .demo-perks { margin-top: 1.55rem; display: grid; gap: .52rem; }
-    .demo-perk {
-      display: flex; align-items: flex-start; gap: .52rem;
-      font-size: .88rem; color: var(--muted);
-    }
-    .demo-perk::before {
-      content: '✓'; color: var(--primary); font-weight: 700;
-      flex-shrink: 0; font-size: .78rem; margin-top: .12em;
-    }
+    .demo-perk { display: flex; align-items: flex-start; gap: .52rem; font-size: .88rem; color: var(--muted); }
+    .demo-perk::before { content: '✓'; color: var(--primary); font-weight: 700; flex-shrink: 0; font-size: .78rem; margin-top: .12em; }
     .demo-form { display: grid; gap: .82rem; }
 
-    /* ── FOOTER ─────────────────────────────────────────────── */
+    /* ── FOOTER ────────────────────────────────────────────── */
     .site-footer { margin-top: 6rem; background: var(--dark); padding: 4rem 0 1.5rem; }
-    .footer-grid {
-      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 2.5rem; margin-bottom: 3rem;
-    }
-    .footer-brand {
-      display: flex; align-items: center; gap: .62rem;
-      font-family: var(--font-display); font-size: 1.05rem;
-      font-weight: 800; letter-spacing: -.02em; color: #fff; margin-bottom: .82rem;
-    }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-brand { display: flex; align-items: center; gap: .62rem; font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; letter-spacing: -.02em; color: #fff; margin-bottom: .82rem; }
     .footer-brand img { width: 34px; height: 34px; }
     .footer-col p { color: var(--dark-muted); font-size: .9rem; line-height: 1.68; }
-    .footer-col h3 {
-      font-size: .68rem; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: #475569; margin-bottom: .95rem;
-    }
+    .footer-col h3 { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #475569; margin-bottom: .95rem; }
     .footer-col ul { display: grid; gap: .46rem; }
     .footer-col a { color: var(--dark-muted); font-size: .9rem; transition: color .15s; }
     .footer-col a:hover { color: #fff; }
-    .footer-bottom {
-      border-top: 1px solid var(--dark-border); padding-top: 1.2rem;
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-    }
+    .footer-bottom { border-top: 1px solid var(--dark-border); padding-top: 1.2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     .footer-bottom p { color: #334155; font-size: .82rem; }
 
-    /* ════════════════════════════════════════════════════
-       FAB — BOTÓN FLOTANTE
-       ────────────────────────────────────────────────────
-       • Sticky CTAs → +27% conversiones (Unbounce 2024)
-       • +33% cart additions en pricing pages
-       • +25% ventas generales (Conversion Rate Experts)
-       • Mobile: CTA buttons > text links en 200%
-
-       Aparece al salir del hero para no competir con el
-       CTA principal. Un único FAB (no floating element hell).
-       Animación spring para sensación de calidad.
-       ════════════════════════════════════════════════════ */
+    /* ── FAB ───────────────────────────────────────────────── */
     .fab {
       position: fixed; bottom: 1.6rem; right: 1.6rem; z-index: 200;
       display: inline-flex; align-items: center; gap: .52rem;
@@ -677,42 +519,25 @@
       padding: .8rem 1.28rem; border-radius: 999px;
       font-family: var(--font-display); font-weight: 700; font-size: .88rem;
       box-shadow: 0 8px 32px rgba(15,17,23,.28), 0 2px 8px rgba(15,17,23,.18);
-      cursor: pointer; border: 1.5px solid rgba(255,255,255,.1);
-      text-decoration: none;
-      transform: translateY(120px) scale(.9);
-      opacity: 0;
-      transition: transform .36s cubic-bezier(.22,1,.36,1),
-                  opacity .28s ease,
-                  box-shadow .18s ease;
+      cursor: pointer; border: 1.5px solid rgba(255,255,255,.1); text-decoration: none;
+      transform: translateY(120px) scale(.9); opacity: 0;
+      transition: transform .36s cubic-bezier(.22,1,.36,1), opacity .28s ease, box-shadow .18s ease;
       pointer-events: none;
     }
-    .fab.fab--visible {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .fab:hover {
-      box-shadow: 0 14px 40px rgba(15,17,23,.34), 0 4px 12px rgba(15,17,23,.22);
-      transform: translateY(-2px) scale(1);
-    }
+    .fab.fab--visible { transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
+    .fab:hover { box-shadow: 0 14px 40px rgba(15,17,23,.34); transform: translateY(-2px) scale(1); }
     .fab:active { transform: scale(.98); }
-    .fab__dot {
-      width: 20px; height: 20px; flex-shrink: 0;
-      background: var(--primary); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: .68rem;
-    }
+    .fab__dot { width: 20px; height: 20px; flex-shrink: 0; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .68rem; }
 
     /* ── RESPONSIVE ─────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .hero-grid              { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-visual            { justify-content: center; }
-      .dash                   { max-width: 100%; }
-      .footer-grid            { grid-template-columns: 1fr 1fr; }
-      .demo-wrap              { grid-template-columns: 1fr; gap: 2rem; }
-      .plans-grid,
-      .extras-grid            { grid-template-columns: repeat(2,1fr); }
-      .grid-3                 { grid-template-columns: repeat(2,1fr); }
+      .hero-grid    { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-visual  { justify-content: center; }
+      .dash         { max-width: 100%; }
+      .footer-grid  { grid-template-columns: 1fr 1fr; }
+      .demo-wrap    { grid-template-columns: 1fr; gap: 2rem; }
+      .plans-grid, .extras-grid { grid-template-columns: repeat(2,1fr); }
+      .grid-3       { grid-template-columns: repeat(2,1fr); }
     }
 
     @media (max-width: 768px) {
@@ -720,60 +545,43 @@
       .section, .hero { padding: 3.5rem 0; }
       .section-tight  { padding: 2.5rem 0; }
 
-      .navbar {
-        height: auto; flex-wrap: wrap;
-        padding: .72rem 0; gap: .65rem;
-      }
+      .navbar { height: auto; flex-wrap: wrap; padding: .72rem 0; gap: .65rem; }
       .nav-toggle { display: flex; }
-      .nav-links {
-        display: none; flex-direction: column; align-items: flex-start;
-        width: 100%; order: 10; gap: 0;
-        border-top: 1px solid var(--border);
-        padding-top: .5rem; margin-top: .28rem;
-      }
+      .nav-links { display: none; flex-direction: column; align-items: flex-start; width: 100%; order: 10; gap: 0; border-top: 1px solid var(--border); padding-top: .5rem; margin-top: .28rem; }
       .nav-links a { width: 100%; padding: .6rem .8rem; font-size: .9rem; }
-      .nav-open .nav-links  { display: flex; }
+      .nav-open .nav-links { display: flex; }
       .nav-actions .btn--ghost { display: none; }
-      .nav-actions .btn    { padding: .56rem .9rem; font-size: .84rem; }
+      .nav-actions .btn { padding: .56rem .9rem; font-size: .84rem; }
 
-      .hero h1             { font-size: clamp(2.1rem,8vw,2.8rem); }
-      .hero__actions       { flex-direction: column; }
-      .hero__actions .btn  { width: 100%; justify-content: center; }
-      .hero__pills         { flex-direction: column; }
-      .hero__pill          { width: 100%; }
+      .hero h1 { font-size: clamp(2.1rem,8vw,2.8rem); }
+      .hero__actions { flex-direction: column; }
+      .hero__actions .btn { width: 100%; justify-content: center; }
+      .hero__pills { flex-direction: column; }
+      .hero__pill  { width: 100%; }
 
-      .dash__metrics       { gap: .48rem; }
-      .dash__bottom        { grid-template-columns: 1fr; }
-      .dash__tile-val      { font-size: 1.08rem; }
+      .dash__metrics { gap: .48rem; }
+      .dash__bottom  { grid-template-columns: 1fr; }
+      .dash__tile-val { font-size: 1.08rem; }
 
-      .grid-3,
-      .stats-band__grid,
-      .grid-2,
-      .plans-grid,
-      .extras-grid         { grid-template-columns: 1fr; }
-
-      .stats-band__item    {
-        border-right: none; border-bottom: 1px solid var(--dark-border);
-        text-align: left; padding: 1.2rem 0;
-      }
+      .grid-3, .stats-band__grid, .grid-2, .plans-grid, .extras-grid { grid-template-columns: 1fr; }
+      .stats-band__item { border-right: none; border-bottom: 1px solid var(--dark-border); text-align: left; padding: 1.2rem 0; }
       .stats-band__item:last-child { border-bottom: none; }
-      .stats-band          { padding: 2.5rem 0; }
+      .stats-band { padding: 2.5rem 0; }
+      .footer-grid  { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .search-row { flex-direction: column; }
+      .search-row .btn { width: 100%; justify-content: center; }
+      .demo-wrap { padding: 1.5rem; }
+      .fab { bottom: 1.2rem; right: 1.2rem; }
 
-      .cart-grid           { grid-template-columns: 1fr; }
-      .footer-grid         { grid-template-columns: 1fr; gap: 1.5rem; }
-      .footer-bottom       { flex-direction: column; align-items: flex-start; }
-
-      .search-row          { flex-direction: column; }
-      .search-row .btn     { width: 100%; justify-content: center; }
-      .demo-wrap           { padding: 1.5rem; }
-
-      .fab                 { bottom: 1.2rem; right: 1.2rem; }
+      /* Sidebar full width en mobile */
+      .cart-sidebar { width: 100vw; }
     }
 
     @media (max-width: 420px) {
-      .container     { width: calc(100% - 1.5rem); }
-      .hero h1       { font-size: 2rem; }
-      .sh h2         { font-size: 1.8rem; }
+      .container  { width: calc(100% - 1.5rem); }
+      .hero h1    { font-size: 2rem; }
+      .sh h2      { font-size: 1.8rem; }
       .dash__metrics { grid-template-columns: 1fr 1fr; }
       .dash__tile:last-child { grid-column: span 2; }
     }
@@ -782,20 +590,51 @@
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
-  <!-- ══ HEADER ═══════════════════════════════════════════════ -->
+  <!-- ══ CART SIDEBAR ══════════════════════════════════════════ -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+
+  <aside class="cart-sidebar" id="cart-sidebar" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="cs-head">
+      <h2>Carrito</h2>
+      <button class="cs-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <!-- Estado vacío (visible cuando no hay ítems) -->
+    <div class="cs-empty" id="cart-empty">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <p>Tu carrito está vacío.<br>Agregá un plan o funcionalidad.</p>
+    </div>
+
+    <!-- Lista de ítems (se rellena con JS) -->
+    <ul class="cs-items" id="cart-items-list" style="display:none"></ul>
+
+    <!-- Footer con total y botón -->
+    <div class="cs-foot" id="cart-foot" style="display:none">
+      <div class="cs-total-row">
+        <span class="cs-total-label">Total / mes</span>
+        <span class="cs-total-num" id="cart-total-display">USD 0 <small>/ mes</small></span>
+      </div>
+      <p class="cs-note">Sin costos de implementación ocultos.</p>
+      <button class="btn btn--primary btn--full" type="button" id="cart-checkout">
+        Continuar contratación
+      </button>
+    </div>
+  </aside>
+
+  <!-- ══ HEADER ══════════════════════════════════════════════════ -->
   <header class="site-header" id="site-header">
     <div class="container">
       <nav class="navbar" aria-label="Navegación principal" id="main-nav">
 
         <a class="brand" href="#inicio" aria-label="Inicio Unspread">
-          <img class="brand-logo" src="../assets/logo-unspread.png"
-               alt="Logo Unspread" width="34" height="34" />
+          <img class="brand-logo" src="../assets/logo-unspread.png" alt="Logo Unspread" width="34" height="34" />
           <span>Unspread</span>
         </a>
 
-        <button class="nav-toggle" id="nav-toggle"
-                aria-expanded="false" aria-controls="nav-list"
-                aria-label="Abrir menú">
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">
           <span></span>
         </button>
 
@@ -803,12 +642,20 @@
           <li><a href="#producto">Producto</a></li>
           <li><a href="#planes">Planes</a></li>
           <li><a href="#extras">Extras</a></li>
-          <li><a href="#carrito">Carrito</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#demo">Demo</a></li>
         </ul>
 
         <div class="nav-actions">
+          <!-- Icono carrito -->
+          <button class="btn-cart" id="cart-open-btn" aria-label="Abrir carrito">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </button>
+
           <a class="btn btn--primary btn--sm" href="#demo">Agendar demo</a>
           <a class="btn btn--ghost btn--sm" href="login.html">Ingresar</a>
         </div>
@@ -818,17 +665,13 @@
 
   <main id="main">
 
-    <!-- ══ HERO ══════════════════════════════════════════════════ -->
+    <!-- ══ HERO ════════════════════════════════════════════════════ -->
     <section id="inicio" class="hero">
       <div class="container hero-grid">
-
         <div>
           <p class="hero__eye">ERP para negocios con stock</p>
           <h1>El sistema operativo<br>de <strong>tu negocio.</strong></h1>
-          <p class="hero__copy">
-            Unspread unifica compras, ventas, inventario y finanzas en un solo
-            lugar. Sin planillas paralelas, sin información desconectada.
-          </p>
+          <p class="hero__copy">Unspread unifica compras, ventas, inventario y finanzas en un solo lugar. Sin planillas paralelas, sin información desconectada.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#planes">Ver planes</a>
             <a class="btn btn--ghost" href="#producto">Ver módulos</a>
@@ -850,18 +693,9 @@
               <span class="dash__badge">● Sistema activo</span>
             </div>
             <div class="dash__metrics">
-              <article class="dash__tile">
-                <p class="dash__tile-lbl">Stock total</p>
-                <p class="dash__tile-val">12.840</p>
-              </article>
-              <article class="dash__tile">
-                <p class="dash__tile-lbl">Órdenes / mes</p>
-                <p class="dash__tile-val">1.248</p>
-              </article>
-              <article class="dash__tile">
-                <p class="dash__tile-lbl">Margen op.</p>
-                <p class="dash__tile-val">18,4%</p>
-              </article>
+              <article class="dash__tile"><p class="dash__tile-lbl">Stock total</p><p class="dash__tile-val">12.840</p></article>
+              <article class="dash__tile"><p class="dash__tile-lbl">Órdenes / mes</p><p class="dash__tile-val">1.248</p></article>
+              <article class="dash__tile"><p class="dash__tile-lbl">Margen op.</p><p class="dash__tile-val">18,4%</p></article>
             </div>
             <div class="dash__bottom">
               <section class="dash__card" aria-labelledby="proc-h">
@@ -874,18 +708,15 @@
               </section>
               <section class="dash__card" aria-labelledby="rend-h">
                 <h4 id="rend-h">Rendimiento</h4>
-                <div class="bars" aria-hidden="true">
-                  <i></i><i></i><i></i><i></i><i></i>
-                </div>
+                <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
               </section>
             </div>
           </div>
         </figure>
-
       </div>
     </section>
 
-    <!-- ══ STATS DARK BAND ════════════════════════════════════════ -->
+    <!-- ══ STATS DARK BAND ══════════════════════════════════════════ -->
     <div class="stats-band" aria-label="Estadísticas clave del mercado">
       <div class="container">
         <div class="stats-band__grid">
@@ -905,7 +736,7 @@
       </div>
     </div>
 
-    <!-- ══ PROBLEMAS ══════════════════════════════════════════════ -->
+    <!-- ══ PROBLEMAS ════════════════════════════════════════════════ -->
     <section id="problemas" class="section" aria-labelledby="prob-h2">
       <div class="container">
         <div class="sh">
@@ -914,29 +745,15 @@
           <p class="sh__sub">Los errores más comunes que Unspread está diseñado para eliminar.</p>
         </div>
         <div class="grid-3">
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">📦</div>
-            <h3>Stock desactualizado</h3>
-            <p>Se vende sin saber qué hay disponible y los errores aparecen en el peor momento.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">🔄</div>
-            <h3>Doble carga de datos</h3>
-            <p>Una cosa en Excel, otra en facturación, otra en WhatsApp. Tiempo y claridad perdidos.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">🛒</div>
-            <h3>Compras sin control</h3>
-            <p>Cuesta saber cuánto se compró, a quién y qué quedó pendiente de pago o recepción.</p>
-          </article>
+          <article class="card"><div class="card__icon" aria-hidden="true">📦</div><h3>Stock desactualizado</h3><p>Se vende sin saber qué hay disponible y los errores aparecen en el peor momento.</p></article>
+          <article class="card"><div class="card__icon" aria-hidden="true">🔄</div><h3>Doble carga de datos</h3><p>Una cosa en Excel, otra en facturación, otra en WhatsApp. Tiempo y claridad perdidos.</p></article>
+          <article class="card"><div class="card__icon" aria-hidden="true">🛒</div><h3>Compras sin control</h3><p>Cuesta saber cuánto se compró, a quién y qué quedó pendiente de pago o recepción.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- ══ MÓDULOS ════════════════════════════════════════════════ -->
-    <section id="producto" class="section"
-             style="background:var(--bg-subtle);border-top:1px solid var(--border);border-bottom:1px solid var(--border)"
-             aria-labelledby="prod-h2">
+    <!-- ══ MÓDULOS ══════════════════════════════════════════════════ -->
+    <section id="producto" class="section" style="background:var(--bg-subtle);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="prod-h2">
       <div class="container">
         <div class="sh">
           <p class="sh__eye">El producto</p>
@@ -944,35 +761,15 @@
           <p class="sh__sub">Cuatro áreas integradas para controlar toda la operación desde un solo sistema.</p>
         </div>
         <div class="grid-2">
-          <article class="card">
-            <p class="mod-num">01</p>
-            <h3>Compras</h3>
-            <p class="mod-sub">Proveedores, órdenes y recepciones.</p>
-            <p>Centralizá el ciclo de compras y eliminá la pérdida de visibilidad sobre deuda, entregas y condiciones pactadas.</p>
-          </article>
-          <article class="card">
-            <p class="mod-num">02</p>
-            <h3>Ventas</h3>
-            <p class="mod-sub">Del pedido al cobro, conectado al stock real.</p>
-            <p>Registrá operaciones, clientes y comprobantes con lógica simple y vinculada a la disponibilidad real.</p>
-          </article>
-          <article class="card">
-            <p class="mod-num">03</p>
-            <h3>Inventario</h3>
-            <p class="mod-sub">Sabé qué tenés, dónde está y qué se mueve.</p>
-            <p>El stock se actualiza junto con compras y ventas para reducir errores y mejorar la toma de decisiones.</p>
-          </article>
-          <article class="card">
-            <p class="mod-num">04</p>
-            <h3>Finanzas</h3>
-            <p class="mod-sub">Cuentas a cobrar, a pagar y resultados.</p>
-            <p>Unificá la información económica del negocio sin tener que cerrar todo a mano al final del mes.</p>
-          </article>
+          <article class="card"><p class="mod-num">01</p><h3>Compras</h3><p class="mod-sub">Proveedores, órdenes y recepciones.</p><p>Centralizá el ciclo de compras y eliminá la pérdida de visibilidad sobre deuda, entregas y condiciones pactadas.</p></article>
+          <article class="card"><p class="mod-num">02</p><h3>Ventas</h3><p class="mod-sub">Del pedido al cobro, conectado al stock real.</p><p>Registrá operaciones, clientes y comprobantes con lógica simple y vinculada a la disponibilidad real.</p></article>
+          <article class="card"><p class="mod-num">03</p><h3>Inventario</h3><p class="mod-sub">Sabé qué tenés, dónde está y qué se mueve.</p><p>El stock se actualiza junto con compras y ventas para reducir errores y mejorar la toma de decisiones.</p></article>
+          <article class="card"><p class="mod-num">04</p><h3>Finanzas</h3><p class="mod-sub">Cuentas a cobrar, a pagar y resultados.</p><p>Unificá la información económica del negocio sin tener que cerrar todo a mano al final del mes.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- ══ BUSCADOR ════════════════════════════════════════════════ -->
+    <!-- ══ BUSCADOR ══════════════════════════════════════════════════ -->
     <section class="section-tight" aria-labelledby="search-h2">
       <div class="container">
         <div class="search-box">
@@ -980,12 +777,11 @@
             <p class="sh__eye">Buscador</p>
             <h2 id="search-h2" style="font-size:1.45rem">Encontrá planes y funcionalidades</h2>
           </div>
-          <form action="#" method="get" role="search">
+          <form id="form-buscador" action="#" method="get" role="search">
             <div class="search-row">
               <div class="field">
                 <label for="busqueda">Buscar plan o funcionalidad</label>
-                <input type="search" id="busqueda" name="busqueda"
-                       placeholder="Ej: Growth, WhatsApp, dashboard…" />
+                <input type="search" id="busqueda" name="busqueda" placeholder="Ej: Growth, WhatsApp, dashboard…" />
               </div>
               <button class="btn btn--primary" type="submit">Buscar</button>
             </div>
@@ -994,7 +790,7 @@
       </div>
     </section>
 
-    <!-- ══ PLANES ═════════════════════════════════════════════════ -->
+    <!-- ══ PLANES ════════════════════════════════════════════════════ -->
     <section id="planes" class="section" aria-labelledby="plans-h2">
       <div class="container">
         <div class="sh">
@@ -1006,15 +802,14 @@
 
           <article class="plan">
             <div class="plan__img">
-              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=Starter"
-                   alt="Plan Starter" width="640" height="300" loading="lazy" />
+              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=Starter" alt="Plan Starter" width="640" height="300" loading="lazy" />
             </div>
             <div class="plan__body">
               <header>
                 <h3>Starter</h3>
                 <p class="plan__sub">Para PyMEs ordenando su operación.</p>
               </header>
-              <p class="plan__price">USD 99 <small>/ mes</small></p>
+              <p class="plan__price">USD 20 <small>/ mes</small></p>
               <ul class="plan__list">
                 <li>Hasta 5 usuarios</li>
                 <li>Compras, Ventas e Inventario</li>
@@ -1022,8 +817,7 @@
                 <li>Reportes básicos</li>
               </ul>
               <div class="plan__action">
-                <button class="btn btn--dark btn--full" type="button"
-                        aria-label="Agregar plan Starter al carrito">
+                <button class="btn btn--dark btn--full" type="button" aria-label="Agregar plan Starter al carrito">
                   Agregar al carrito
                 </button>
               </div>
@@ -1032,8 +826,7 @@
 
           <article class="plan plan--feat">
             <div class="plan__img">
-              <img src="https://placehold.co/640x300/eff6ff/1e3a8a?text=Growth"
-                   alt="Plan Growth" width="640" height="300" loading="lazy" />
+              <img src="https://placehold.co/640x300/eff6ff/1e3a8a?text=Growth" alt="Plan Growth" width="640" height="300" loading="lazy" />
             </div>
             <div class="plan__body">
               <header>
@@ -1041,7 +834,7 @@
                 <h3 style="margin-top:.5rem">Growth</h3>
                 <p class="plan__sub">Control total de la operación.</p>
               </header>
-              <p class="plan__price">USD 249 <small>/ mes</small></p>
+              <p class="plan__price">USD 50 <small>/ mes</small></p>
               <ul class="plan__list">
                 <li>Usuarios ilimitados</li>
                 <li>Compras, Ventas, Inventario y Finanzas</li>
@@ -1050,8 +843,7 @@
                 <li>Onboarding personalizado</li>
               </ul>
               <div class="plan__action">
-                <button class="btn btn--primary btn--full" type="button"
-                        aria-label="Agregar plan Growth al carrito">
+                <button class="btn btn--primary btn--full" type="button" aria-label="Agregar plan Growth al carrito">
                   Agregar al carrito
                 </button>
               </div>
@@ -1060,8 +852,7 @@
 
           <article class="plan">
             <div class="plan__img">
-              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=Enterprise"
-                   alt="Plan Enterprise" width="640" height="300" loading="lazy" />
+              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=Enterprise" alt="Plan Enterprise" width="640" height="300" loading="lazy" />
             </div>
             <div class="plan__body">
               <header>
@@ -1076,8 +867,7 @@
                 <li>Capacitación del equipo</li>
               </ul>
               <div class="plan__action">
-                <button class="btn btn--dark btn--full" type="button"
-                        aria-label="Consultar precio Enterprise">
+                <button class="btn btn--dark btn--full" type="button" aria-label="Consultar precio Enterprise">
                   Consultar precio
                 </button>
               </div>
@@ -1088,10 +878,8 @@
       </div>
     </section>
 
-    <!-- ══ EXTRAS ═════════════════════════════════════════════════ -->
-    <section id="extras" class="section"
-             style="background:var(--bg-subtle);border-top:1px solid var(--border);border-bottom:1px solid var(--border)"
-             aria-labelledby="extras-h2">
+    <!-- ══ EXTRAS ════════════════════════════════════════════════════ -->
+    <section id="extras" class="section" style="background:var(--bg-subtle);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="extras-h2">
       <div class="container">
         <div class="sh">
           <p class="sh__eye">Funciones extra</p>
@@ -1102,16 +890,14 @@
 
           <article class="extra">
             <div class="extra__img">
-              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=WhatsApp"
-                   alt="Integración WhatsApp" width="640" height="300" loading="lazy" />
+              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=WhatsApp" alt="Integración WhatsApp" width="640" height="300" loading="lazy" />
             </div>
             <div class="extra__body">
               <h3>Integración WhatsApp</h3>
               <p class="extra__sub">Automatizá avisos y seguimiento comercial desde el sistema.</p>
-              <p class="extra__price">USD 29 <small style="font-size:.8rem;font-weight:500;color:var(--muted)">/ mes</small></p>
+              <p class="extra__price">USD 5 <small style="font-size:.8rem;font-weight:500;color:var(--muted)">/ mes</small></p>
               <div class="extra__action">
-                <button class="btn btn--dark btn--full" type="button"
-                        aria-label="Agregar WhatsApp al carrito">
+                <button class="btn btn--dark btn--full" type="button" aria-label="Agregar WhatsApp al carrito">
                   Agregar al carrito
                 </button>
               </div>
@@ -1120,16 +906,14 @@
 
           <article class="extra">
             <div class="extra__img">
-              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=Dashboard"
-                   alt="Dashboard Ejecutivo" width="640" height="300" loading="lazy" />
+              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=Dashboard" alt="Dashboard Ejecutivo" width="640" height="300" loading="lazy" />
             </div>
             <div class="extra__body">
               <h3>Dashboard Ejecutivo</h3>
               <p class="extra__sub">Indicadores clave para decidir con más claridad.</p>
-              <p class="extra__price">USD 39 <small style="font-size:.8rem;font-weight:500;color:var(--muted)">/ mes</small></p>
+              <p class="extra__price">USD 10 <small style="font-size:.8rem;font-weight:500;color:var(--muted)">/ mes</small></p>
               <div class="extra__action">
-                <button class="btn btn--dark btn--full" type="button"
-                        aria-label="Agregar Dashboard al carrito">
+                <button class="btn btn--dark btn--full" type="button" aria-label="Agregar Dashboard al carrito">
                   Agregar al carrito
                 </button>
               </div>
@@ -1138,16 +922,14 @@
 
           <article class="extra">
             <div class="extra__img">
-              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=Soporte"
-                   alt="Soporte Prioritario" width="640" height="300" loading="lazy" />
+              <img src="https://placehold.co/640x300/f8fafc/0f1117?text=Soporte" alt="Soporte Prioritario" width="640" height="300" loading="lazy" />
             </div>
             <div class="extra__body">
               <h3>Soporte Prioritario</h3>
               <p class="extra__sub">Respuestas más rápidas ante incidencias críticas.</p>
-              <p class="extra__price">USD 19 <small style="font-size:.8rem;font-weight:500;color:var(--muted)">/ mes</small></p>
+              <p class="extra__price">USD 15 <small style="font-size:.8rem;font-weight:500;color:var(--muted)">/ mes</small></p>
               <div class="extra__action">
-                <button class="btn btn--dark btn--full" type="button"
-                        aria-label="Agregar Soporte al carrito">
+                <button class="btn btn--dark btn--full" type="button" aria-label="Agregar Soporte al carrito">
                   Agregar al carrito
                 </button>
               </div>
@@ -1158,45 +940,7 @@
       </div>
     </section>
 
-    <!-- ══ CARRITO ════════════════════════════════════════════════ -->
-    <aside id="carrito" class="section" aria-labelledby="cart-h2">
-      <div class="container">
-        <div class="cart-wrap">
-          <div class="sh" style="margin-bottom:1.5rem">
-            <p class="sh__eye">Resumen</p>
-            <h2 id="cart-h2">Carrito</h2>
-            <p class="sh__sub">Suscripción y extras seleccionados.</p>
-          </div>
-          <div class="cart-grid">
-            <section class="cart-box" aria-labelledby="cart-det-h">
-              <h3 id="cart-det-h">Detalle de compra</h3>
-              <ul class="cart-items">
-                <li class="cart-item">
-                  <span>Plan: Unspread Growth</span>
-                  <span class="cart-item__price">USD 249</span>
-                </li>
-                <li class="cart-item">
-                  <span>Dashboard Ejecutivo</span>
-                  <span class="cart-item__price">USD 39</span>
-                </li>
-                <li class="cart-item">
-                  <span>Soporte Prioritario</span>
-                  <span class="cart-item__price">USD 19</span>
-                </li>
-              </ul>
-            </section>
-            <section class="cart-box" aria-labelledby="cart-tot-h">
-              <h3 id="cart-tot-h">Total estimado</h3>
-              <p class="cart-total">USD 307 <small style="font-size:.95rem;font-weight:500;color:var(--muted)">/&nbsp;mes</small></p>
-              <p class="cart-note">El carrito está representado de forma estática. La lógica dinámica se agrega con JavaScript en una etapa posterior.</p>
-              <button class="btn btn--primary btn--full" type="button">Continuar contratación</button>
-            </section>
-          </div>
-        </div>
-      </div>
-    </aside>
-
-    <!-- ══ POR QUÉ UNSPREAD ═══════════════════════════════════════ -->
+    <!-- ══ POR QUÉ UNSPREAD ══════════════════════════════════════════ -->
     <section id="diferencial" class="section" aria-labelledby="why-h2">
       <div class="container">
         <div class="sh">
@@ -1205,31 +949,15 @@
           <p class="sh__sub">La mayoría de los sistemas intenta servir para todo. Unspread se enfoca en negocios con stock.</p>
         </div>
         <div class="grid-3">
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">🎯</div>
-            <h3>Pensado para stock</h3>
-            <p>Flujos diseñados para empresas que compran, venden, almacenan y necesitan trazabilidad real.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">⚡</div>
-            <h3>Implementación simple</h3>
-            <p>Ordenar la operación sin proyectos largos ni meses de consultoría innecesaria.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">📊</div>
-            <h3>Data útil para decidir</h3>
-            <p>No solo registrar información, sino volverla clara y accionable para el negocio.</p>
-          </article>
+          <article class="card"><div class="card__icon" aria-hidden="true">🎯</div><h3>Pensado para stock</h3><p>Flujos diseñados para empresas que compran, venden, almacenan y necesitan trazabilidad real.</p></article>
+          <article class="card"><div class="card__icon" aria-hidden="true">⚡</div><h3>Implementación simple</h3><p>Ordenar la operación sin proyectos largos ni meses de consultoría innecesaria.</p></article>
+          <article class="card"><div class="card__icon" aria-hidden="true">📊</div><h3>Data útil para decidir</h3><p>No solo registrar información, sino volverla clara y accionable para el negocio.</p></article>
         </div>
         <div class="table-wrap">
           <table>
             <caption>Unspread vs ERPs tradicionales</caption>
             <thead>
-              <tr>
-                <th scope="col">Criterio</th>
-                <th scope="col">Unspread</th>
-                <th scope="col">ERPs tradicionales</th>
-              </tr>
+              <tr><th scope="col">Criterio</th><th scope="col">Unspread</th><th scope="col">ERPs tradicionales</th></tr>
             </thead>
             <tbody>
               <tr><td>Enfoque</td><td>Negocios con stock</td><td>Generalista</td></tr>
@@ -1242,45 +970,23 @@
       </div>
     </section>
 
-    <!-- ══ FAQ ════════════════════════════════════════════════════ -->
-    <section id="faq" class="section"
-             style="background:var(--bg-subtle);border-top:1px solid var(--border);border-bottom:1px solid var(--border)"
-             aria-labelledby="faq-h2">
+    <!-- ══ FAQ ══════════════════════════════════════════════════════ -->
+    <section id="faq" class="section" style="background:var(--bg-subtle);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="faq-h2">
       <div class="container">
         <div class="sh">
           <p class="sh__eye">Preguntas frecuentes</p>
           <h2 id="faq-h2">Respuestas antes de agendar una demo</h2>
         </div>
         <div class="faq-list">
-          <article class="faq">
-            <details>
-              <summary>¿Cuánto tarda la implementación?</summary>
-              <p class="faq__body">Depende del volumen de datos inicial, pero la propuesta de Unspread es reducir tiempos de adopción y evitar implementaciones eternas.</p>
-            </details>
-          </article>
-          <article class="faq">
-            <details>
-              <summary>¿Puedo contratar un plan y después sumar extras?</summary>
-              <p class="faq__body">Sí. Primero elegís el plan base y podés agregar funcionalidades en cualquier momento, sin interrumpir la operación.</p>
-            </details>
-          </article>
-          <article class="faq">
-            <details>
-              <summary>¿El carrito funciona de forma real?</summary>
-              <p class="faq__body">En esta versión el carrito está representado semánticamente. La lógica dinámica se desarrolla en una etapa posterior con JavaScript.</p>
-            </details>
-          </article>
-          <article class="faq">
-            <details>
-              <summary>¿Qué pasa con mis datos?</summary>
-              <p class="faq__body">El objetivo es centralizar la información del negocio y mantenerla ordenada, accesible y exportable en todo momento.</p>
-            </details>
-          </article>
+          <article class="faq"><details><summary>¿Cuánto tarda la implementación?</summary><p class="faq__body">Depende del volumen de datos inicial, pero la propuesta de Unspread es reducir tiempos de adopción y evitar implementaciones eternas.</p></details></article>
+          <article class="faq"><details><summary>¿Puedo contratar un plan y después sumar extras?</summary><p class="faq__body">Sí. Primero elegís el plan base y podés agregar funcionalidades en cualquier momento, sin interrumpir la operación.</p></details></article>
+          <article class="faq"><details><summary>¿Cómo funciona el carrito?</summary><p class="faq__body">Hacé clic en "Agregar al carrito" en cualquier plan o extra. El carrito se despliega desde el ícono en el header y muestra el total actualizado automáticamente.</p></details></article>
+          <article class="faq"><details><summary>¿Qué pasa con mis datos?</summary><p class="faq__body">El objetivo es centralizar la información del negocio y mantenerla ordenada, accesible y exportable en todo momento.</p></details></article>
         </div>
       </div>
     </section>
 
-    <!-- ══ DEMO ═══════════════════════════════════════════════════ -->
+    <!-- ══ DEMO ══════════════════════════════════════════════════════ -->
     <section id="demo" class="section" aria-labelledby="demo-h2">
       <div class="container">
         <div class="demo-wrap">
@@ -1295,21 +1001,18 @@
               <p class="demo-perk">Sin tarjeta de crédito</p>
             </div>
           </div>
-          <form class="demo-form" action="#" method="post">
+          <form id="form-demo" class="demo-form" action="#" method="post">
             <div class="field">
               <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre"
-                     placeholder="Juan García" autocomplete="name" required />
+              <input type="text" id="nombre" name="nombre" placeholder="Juan García" autocomplete="name" required />
             </div>
             <div class="field">
               <label for="empresa">Empresa</label>
-              <input type="text" id="empresa" name="empresa"
-                     placeholder="Distribuidora García S.A." autocomplete="organization" required />
+              <input type="text" id="empresa" name="empresa" placeholder="Distribuidora García S.A." autocomplete="organization" required />
             </div>
             <div class="field">
               <label for="email">Correo electrónico</label>
-              <input type="email" id="email" name="email"
-                     placeholder="juan@empresa.com" autocomplete="email" required />
+              <input type="email" id="email" name="email" placeholder="juan@empresa.com" autocomplete="email" required />
             </div>
             <div class="field">
               <label for="tipo">Tipo de negocio</label>
@@ -1323,13 +1026,10 @@
             </div>
             <div class="field">
               <label for="mensaje">¿Qué querés resolver con Unspread?</label>
-              <textarea id="mensaje" name="mensaje" rows="4"
-                        placeholder="Contanos brevemente tu necesidad"></textarea>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos brevemente tu necesidad"></textarea>
             </div>
             <button class="btn btn--primary" type="submit">Agendar mi demo →</button>
-            <p style="font-size:.77rem;color:var(--muted);margin-top:-.15rem">
-              Sin compromiso · Respuesta en menos de 24 hs
-            </p>
+            <p style="font-size:.77rem;color:var(--muted);margin-top:-.15rem">Sin compromiso · Respuesta en menos de 24 hs</p>
           </form>
         </div>
       </div>
@@ -1337,7 +1037,7 @@
 
   </main>
 
-  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <!-- ══ FOOTER ════════════════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -1354,7 +1054,6 @@
             <li><a href="#producto">Módulos</a></li>
             <li><a href="#planes">Planes</a></li>
             <li><a href="#extras">Extras</a></li>
-            <li><a href="#carrito">Carrito</a></li>
           </ul>
         </nav>
         <nav class="footer-col" aria-label="Empresa">
@@ -1383,36 +1082,335 @@
     </div>
   </footer>
 
-  <!-- ══ FAB ═══════════════════════════════════════════════════ -->
+  <!-- ══ FAB ════════════════════════════════════════════════════════ -->
   <a class="fab" id="fab" href="#demo" aria-label="Agendar una demo con Unspread">
     <span class="fab__dot" aria-hidden="true">✉</span>
     Agendar demo
   </a>
 
+  <!-- ══ JAVASCRIPT ════════════════════════════════════════════════ -->
   <script>
-    /* NAV TOGGLE */
+
+    /* =========================================================
+       CONCEPTOS USADOS (Clase 0 y Clase 1 ITBA):
+         - Variables con let y const
+         - Tipos de dato: string y number
+         - Declaración, asignación e inicialización
+         - Operaciones: suma, concatenación
+         - console.log() para depuración
+         - alert() para mensajes al usuario
+       ========================================================= */
+
+
+    /* ---------------------------------------------------------
+       1. NAV TOGGLE — menú hamburger en mobile
+    --------------------------------------------------------- */
     const toggle = document.getElementById('nav-toggle');
     const hdr    = document.getElementById('site-header');
-    toggle.addEventListener('click', () => {
+
+    toggle.addEventListener('click', function() {
       const open = hdr.classList.toggle('nav-open');
       toggle.setAttribute('aria-expanded', open);
       toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     });
-    document.querySelectorAll('.nav-links a').forEach(a =>
-      a.addEventListener('click', () => {
-        hdr.classList.remove('nav-open');
-        toggle.setAttribute('aria-expanded','false');
-        toggle.setAttribute('aria-label','Abrir menú');
-      })
-    );
 
-    /* FAB — aparece al salir del hero */
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        hdr.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Abrir menú');
+      });
+    });
+
+
+    /* ---------------------------------------------------------
+       2. FAB — aparece al salir del hero
+    --------------------------------------------------------- */
     const fab  = document.getElementById('fab');
     const hero = document.getElementById('inicio');
+
     new IntersectionObserver(
-      ([e]) => fab.classList.toggle('fab--visible', !e.isIntersecting),
+      function(entries) {
+        fab.classList.toggle('fab--visible', !entries[0].isIntersecting);
+      },
       { threshold: 0.1 }
     ).observe(hero);
+
+
+    /* ---------------------------------------------------------
+       3. CARRITO SIDEBAR
+       ---------------------------------------------------------
+       Conceptos de clase usados:
+         - let totalCarrito: number que acumula con suma
+         - let cantidadItems: number que cuenta los ítems
+         - const PRECIO_*: numbers fijos (no cambian)
+         - Strings para nombres de cada plan/extra
+         - Concatenación con + para armar mensajes
+         - console.log() para ver el estado del carrito
+    --------------------------------------------------------- */
+
+    // Precios actualizados (numbers — no cambian, usamos const)
+    const PRECIO_STARTER    = 20;
+    const PRECIO_GROWTH     = 50;
+    const PRECIO_ENTERPRISE = 0;   // precio a medida
+    const PRECIO_WHATSAPP   = 5;
+    const PRECIO_DASHBOARD  = 10;
+    const PRECIO_SOPORTE    = 15;
+
+    // Estado del carrito
+    let totalCarrito  = 0;   // acumula el total en USD (number)
+    let cantidadItems = 0;   // cuenta cuántos ítems hay (number)
+
+    // Referencias a elementos del sidebar
+    const cartOverlay   = document.getElementById('cart-overlay');
+    const cartSidebar   = document.getElementById('cart-sidebar');
+    const cartOpenBtn   = document.getElementById('cart-open-btn');
+    const cartCloseBtn  = document.getElementById('cart-close');
+    const cartBadge     = document.getElementById('cart-badge');
+    const cartEmpty     = document.getElementById('cart-empty');
+    const cartItemsList = document.getElementById('cart-items-list');
+    const cartFoot      = document.getElementById('cart-foot');
+    const cartTotalDisp = document.getElementById('cart-total-display');
+    const cartCheckout  = document.getElementById('cart-checkout');
+
+    // Función: abrir el sidebar
+    function abrirCarrito() {
+      cartOverlay.classList.add('open');
+      cartSidebar.classList.add('open');
+      cartOverlay.setAttribute('aria-hidden', 'false');
+      cartSidebar.setAttribute('aria-hidden', 'false');
+      console.log('Carrito abierto. Total: USD ' + totalCarrito + ' / mes');
+    }
+
+    // Función: cerrar el sidebar
+    function cerrarCarrito() {
+      cartOverlay.classList.remove('open');
+      cartSidebar.classList.remove('open');
+      cartOverlay.setAttribute('aria-hidden', 'true');
+      cartSidebar.setAttribute('aria-hidden', 'true');
+    }
+
+    // Función: actualizar la vista del sidebar
+    function actualizarVista() {
+      // Actualizamos el badge del header
+      cartBadge.textContent = cantidadItems;
+      if (cantidadItems > 0) {
+        cartBadge.classList.add('visible');
+      } else {
+        cartBadge.classList.remove('visible');
+      }
+
+      // Mostramos u ocultamos estado vacío vs lista
+      if (cantidadItems === 0) {
+        cartEmpty.style.display    = 'flex';
+        cartItemsList.style.display = 'none';
+        cartFoot.style.display      = 'none';
+      } else {
+        cartEmpty.style.display    = 'none';
+        cartItemsList.style.display = 'flex';
+        cartFoot.style.display      = 'flex';
+      }
+
+      // Actualizamos el total mostrado
+      cartTotalDisp.innerHTML = 'USD ' + totalCarrito + ' <small>/ mes</small>';
+    }
+
+    // Función: agregar un ítem al carrito
+    function agregarAlCarrito(nombreItem, precioItem) {
+
+      // Si es Enterprise (precio 0) mostramos aviso especial
+      if (precioItem === 0) {
+        console.log('--- CARRITO ---');
+        console.log('Agregaste: ' + nombreItem + ' (precio a medida)');
+        alert('Plan Enterprise agregado.\nUn asesor te va a contactar para definir el precio.');
+        return;
+      }
+
+      // Acumulamos el precio (suma de numbers)
+      totalCarrito  = totalCarrito + precioItem;
+      cantidadItems = cantidadItems + 1;
+
+      // Registramos en consola (concatenación de string + number)
+      console.log('--- CARRITO ---');
+      console.log('Agregaste: ' + nombreItem + ' — USD ' + precioItem);
+      console.log('Total acumulado: USD ' + totalCarrito + ' / mes');
+      console.log('Cantidad de ítems: ' + cantidadItems);
+
+      // Creamos el elemento HTML del ítem en el sidebar
+      const li = document.createElement('li');
+      li.className = 'cs-item';
+      li.innerHTML =
+        '<div class="cs-item__info">' +
+          '<p class="cs-item__name">' + nombreItem + '</p>' +
+          '<p class="cs-item__type">USD ' + precioItem + ' / mes</p>' +
+        '</div>' +
+        '<span class="cs-item__price">USD ' + precioItem + '</span>' +
+        '<button class="cs-item__remove" aria-label="Quitar ' + nombreItem + '" ' +
+                'data-precio="' + precioItem + '">✕</button>';
+
+      // Al hacer clic en ✕, quitamos el ítem
+      li.querySelector('.cs-item__remove').addEventListener('click', function() {
+        // Leemos el precio del botón (lo convierte de string a number con +)
+        const precio = +this.getAttribute('data-precio');
+        totalCarrito  = totalCarrito - precio;
+        cantidadItems = cantidadItems - 1;
+
+        console.log('--- CARRITO ---');
+        console.log('Quitaste: ' + nombreItem + ' — USD ' + precio);
+        console.log('Total restante: USD ' + totalCarrito + ' / mes');
+
+        li.remove();
+        actualizarVista();
+      });
+
+      cartItemsList.appendChild(li);
+      actualizarVista();
+
+      // Abrimos el sidebar automáticamente al agregar
+      abrirCarrito();
+    }
+
+    // Abrir/cerrar sidebar
+    cartOpenBtn.addEventListener('click', abrirCarrito);
+    cartCloseBtn.addEventListener('click', cerrarCarrito);
+    cartOverlay.addEventListener('click', cerrarCarrito);
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') cerrarCarrito();
+    });
+
+    // Botón "Continuar contratación"
+    cartCheckout.addEventListener('click', function() {
+      // Armamos un resumen con concatenación (Clase 1)
+      let resumen = '¡Listo!\n\nResumen de tu suscripción:\n';
+      resumen = resumen + 'Total: USD ' + totalCarrito + ' / mes\n\n';
+      resumen = resumen + 'Un asesor de Unspread te va a contactar para completar la contratación.';
+
+      console.log('--- CHECKOUT ---');
+      console.log('Total a cobrar: USD ' + totalCarrito + ' / mes');
+
+      alert(resumen);
+    });
+
+    // Conectamos cada botón "Agregar al carrito"
+    const botonesCarrito = document.querySelectorAll('[aria-label*="carrito"], [aria-label*="Carrito"]');
+
+    botonesCarrito.forEach(function(boton) {
+      boton.addEventListener('click', function() {
+        // Leemos el aria-label para saber qué botón fue (string)
+        const etiqueta = boton.getAttribute('aria-label').toLowerCase();
+
+        if (etiqueta.includes('starter')) {
+          agregarAlCarrito('Plan Starter', PRECIO_STARTER);
+        } else if (etiqueta.includes('growth')) {
+          agregarAlCarrito('Plan Growth', PRECIO_GROWTH);
+        } else if (etiqueta.includes('enterprise')) {
+          agregarAlCarrito('Plan Enterprise', PRECIO_ENTERPRISE);
+        } else if (etiqueta.includes('whatsapp')) {
+          agregarAlCarrito('Integración WhatsApp', PRECIO_WHATSAPP);
+        } else if (etiqueta.includes('dashboard')) {
+          agregarAlCarrito('Dashboard Ejecutivo', PRECIO_DASHBOARD);
+        } else if (etiqueta.includes('soporte')) {
+          agregarAlCarrito('Soporte Prioritario', PRECIO_SOPORTE);
+        }
+      });
+    });
+
+
+    /* ---------------------------------------------------------
+       4. BUSCADOR DE PLANES
+       ---------------------------------------------------------
+       Conceptos de clase usados:
+         - const para el texto ingresado (string)
+         - Variables con precios (numbers)
+         - Concatenación para armar el mensaje
+         - console.log() y alert()
+    --------------------------------------------------------- */
+    const formBuscador = document.getElementById('form-buscador');
+
+    formBuscador.addEventListener('submit', function(evento) {
+      evento.preventDefault();
+
+      // Texto ingresado → string en minúsculas
+      const textoBuscado = document.getElementById('busqueda').value.trim().toLowerCase();
+
+      if (textoBuscado === '') {
+        alert('Por favor escribí algo para buscar.');
+        return;
+      }
+
+      console.log('--- BUSCADOR ---');
+      console.log('Buscó: ' + textoBuscado);
+
+      // Nombres de planes y extras (strings para comparar)
+      const planStarter    = 'starter';
+      const planGrowth     = 'growth';
+      const planEnterprise = 'enterprise';
+      const extraWhatsapp  = 'whatsapp';
+      const extraDashboard = 'dashboard';
+      const extraSoporte   = 'soporte';
+
+      let mensajeResultado = '';
+
+      if (textoBuscado.includes(planStarter)) {
+        mensajeResultado = '✅ Plan Starter — USD ' + PRECIO_STARTER + ' / mes\nIdeal para PyMEs ordenando su operación.';
+      } else if (textoBuscado.includes(planGrowth)) {
+        mensajeResultado = '✅ Plan Growth — USD ' + PRECIO_GROWTH + ' / mes\nControl total de la operación. El más elegido.';
+      } else if (textoBuscado.includes(planEnterprise)) {
+        mensajeResultado = '✅ Plan Enterprise — Precio a medida\nPara operaciones con integraciones específicas.';
+      } else if (textoBuscado.includes(extraWhatsapp)) {
+        mensajeResultado = '✅ Extra: WhatsApp — USD ' + PRECIO_WHATSAPP + ' / mes\nAutomatizá avisos y seguimiento comercial.';
+      } else if (textoBuscado.includes(extraDashboard)) {
+        mensajeResultado = '✅ Extra: Dashboard Ejecutivo — USD ' + PRECIO_DASHBOARD + ' / mes\nIndicadores clave para decidir.';
+      } else if (textoBuscado.includes(extraSoporte)) {
+        mensajeResultado = '✅ Extra: Soporte Prioritario — USD ' + PRECIO_SOPORTE + ' / mes\nRespuestas rápidas ante incidencias.';
+      } else {
+        mensajeResultado = '❌ No encontramos "' + textoBuscado + '".\nProbá: Starter, Growth, Enterprise, WhatsApp, Dashboard o Soporte.';
+      }
+
+      console.log('Resultado: ' + mensajeResultado);
+      alert(mensajeResultado);
+    });
+
+
+    /* ---------------------------------------------------------
+       5. FORMULARIO DE DEMO — confirmación al enviar
+       ---------------------------------------------------------
+       Conceptos de clase usados:
+         - let para los campos (strings)
+         - Concatenación para armar el mensaje
+         - alert() para confirmación
+         - console.log() para el resumen
+    --------------------------------------------------------- */
+    const formDemo = document.getElementById('form-demo');
+
+    formDemo.addEventListener('submit', function(evento) {
+      evento.preventDefault();
+
+      let nombreUsuario  = document.getElementById('nombre').value.trim();
+      let empresaUsuario = document.getElementById('empresa').value.trim();
+      let emailUsuario   = document.getElementById('email').value.trim();
+      let tipoNegocio    = document.getElementById('tipo').value;
+
+      if (nombreUsuario === '' || empresaUsuario === '' || emailUsuario === '') {
+        alert('Por favor completá todos los campos obligatorios.');
+        return;
+      }
+
+      let mensajeDemo = '¡Gracias, ' + nombreUsuario + '!\n\n';
+      mensajeDemo     = mensajeDemo + 'Recibimos tu solicitud para ' + empresaUsuario + '.\n';
+      mensajeDemo     = mensajeDemo + 'Te contactamos a ' + emailUsuario + ' en menos de 24 hs.';
+
+      console.log('--- DEMO ---');
+      console.log('Nombre:  ' + nombreUsuario);
+      console.log('Empresa: ' + empresaUsuario);
+      console.log('Email:   ' + emailUsuario);
+      console.log('Negocio: ' + tipoNegocio);
+
+      alert(mensajeDemo);
+    });
+
   </script>
 </body>
 </html>
